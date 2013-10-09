@@ -1,0 +1,12 @@
+{% extends "content/one_column_page.html" %}
+{% load i18n %}
+{% block title %} {{page.title|safe}} {% endblock %}
+
+
+
+{%block page_content %}
+
+        {{page.content|safe}}
+
+{%endblock%}
+

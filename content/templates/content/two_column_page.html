@@ -1,0 +1,25 @@
+{% extends "content/base.html" %}
+
+{%block content %}
+    <div id="left_sidebar">
+            <!-- Start of Categories Box -->
+
+        <div id="categories">
+            <div id="categories_header">
+                <h2>{% block left_sidebar_header %} {%endblock%}</h2>
+            </div>
+
+            <ul>
+                {% block left_sidebar_items %} {%endblock%}
+            </ul>
+
+            <div class="clearthis">&nbsp;</div>
+        </div>
+
+            <!-- End of Categories Box -->
+    </div>
+
+    <div id="two_column_page_main_content">
+        {%block page_content %} {%endblock%}
+    </div>
+{%endblock%}
