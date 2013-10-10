@@ -1,0 +1,52 @@
+{% extends "content/page_with_series_left_sidebar.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block additional_meta %}
+    <link rel="stylesheet" href="{% static 'content/css/product.css' %}" type="text/css" media="screen"/>
+{% endblock %}
+
+{% block title %} {{category.name|capfirst}}&nbsp;{{series.name}}&nbsp;{{product.name}} {% endblock %}
+{%block page_content %}
+    <div class="product_header">{{product.type.name|capfirst}} {{product.name}}</div>
+
+    <table class="product_table">
+        <tr>
+             <td>
+                 <table class="product_table_attributes" id="series_products">
+                     <tr> <td>{% trans "Min frequency (GHz)"%}</td> <td>{{product.frequency_min}}</td> </tr>
+                      <tr> <td>{% trans "Max frequency (GHz)"%}</td> <td>{{product.frequency_max}}</td> </tr>
+                      <tr> <td>{% trans "Min insertion losses (dB)"%}</td> <td>{{product.insertion_losses_min}}</td> </tr>
+                      <tr> <td>{% trans "Max insertion losses (dB)"%}</td> <td>{{product.insertion_losses_max}}</td> </tr>
+                      <tr> <td>{% trans "Min inverse losses (dB)"%}</td> <td>{{product.inverse_losses_min}}</td> </tr>
+                      <tr> <td>{% trans "Max inverse losses (dB)"%}</td> <td>{{product.inverse_losses_max}}</td> </tr>
+                      <tr> <td>{% trans "VSWR"%}</td> <td>{{product.vswr}}</td> </tr>
+                      <tr> <td>{% trans "Min temperature (&#176;C)"%}</td> <td>{{product.temperature_min}}</td> </tr>
+                      <tr> <td>{% trans "Max temperature (&#176;C)"%}</td> <td>{{product.temperature_max}}</td> </tr>
+                      <tr> <td>{% trans "Max input power (W)"%}</td> <td>{{product.input_power}}</td> </tr>
+                     {%if product.description %}
+                        <tr> <td colspan="2"><div class="product_description">{{product.description|safe}}</div></td></tr>
+                     {%endif%}
+                  </table>
+           </td>
+            <td >
+                <table class="product_type_table">
+                    <tr>
+                        <td>{{product.name}} </td><td><img src="{{product.type.direct_flow_image.url}}" /></td>
+                    </tr>
+
+                    {%if product.type.reverse_flow_image.url %}
+                        <tr>
+                            <td>{{product.name}}-1</td>
+                            <td><img src="{{product.type.reverse_flow_image.url}}"  /></td>
+                        </tr>
+                    {%endif%}
+                </table>
+            </td>
+            <td>
+                 {% for product_image in product_images %}
+                     <img src="{{product_image.image.url}}" class="product_image" />
+                {%endfor%}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

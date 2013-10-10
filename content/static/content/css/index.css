@@ -48,14 +48,6 @@ p {
 	width: 1000px;
 }
 
-input {
-	padding-left: 2px;
-	background-color: #fff;
-	font-family: tahoma, arial, sans-serif;
-	font-size: 11px;
-}
-
-
 /* Page Header */
 
 #page_header {
@@ -205,7 +197,8 @@ input {
 
 #left_sidebar {
     margin-top: 10px;
-	width: 129px;
+	width: 169px;
+
 	float: left;
 	text-align: left;
 }
@@ -222,6 +215,7 @@ input {
 /* Left Sidebar : Categories */
 
 #categories {
+    height:300px;
 	margin-bottom: 1px;
 	padding: 1px 1px 1px 0px;
 	border-color: #1F202B;
@@ -233,7 +227,7 @@ input {
 
 #categories_header {
 	margin-bottom: 2px;
-	width: 127px;
+	width: 167px;
 	height: 20px;
 	background-color: #1F202B;
 	overflow: hidden;
@@ -248,12 +242,12 @@ input {
 
 #categories ul {
 	margin: 0px auto;
-	width: 120px;
+	width: 160px;
 	list-style-type: none;
 }
 
 #categories li {
-	width: 120px;
+	width: 160px;
 	height: 21px;
 	list-style-type: none;
 	text-align: left;
@@ -297,11 +291,10 @@ input {
 	margin-right: 2px;
 	margin-top: 10px;
 
-	width: 644px;
+	width: 805px;
 	min-height:300px;
 	text-align: center;
 	float: right;
-
 	border-color: #9e9ec3;
 	border-width: 1px 1px 1px;
 	border-style: solid;

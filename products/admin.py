@@ -2,7 +2,7 @@
 from django.contrib import admin
 # import stuff we need from django
 # import app specific shit
-from products.models import Product,ProductImage,ProductTranslation,Serie,Type,TypeTranslation,Category,CategoryTranslation
+from products.models import Product,ProductImage,ProductTranslation,Series,Type,TypeTranslation,Category,CategoryTranslation
 from django.conf import settings
 """
 class Serie(models.Model):
@@ -154,6 +154,6 @@ class SeriesAdmin(admin.ModelAdmin):
 # register with CMS
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
-admin.site.register(Serie, SeriesAdmin)
+admin.site.register(Series, SeriesAdmin)
 admin.site.register(Type, TypeAdmin)
 admin.site.register(Category, CategoryAdmin)

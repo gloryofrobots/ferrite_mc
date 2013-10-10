@@ -1,0 +1,44 @@
+
+.series_products {
+    width:100%;
+}
+
+.series_products caption{
+    color:#000;
+    font-size:14px;
+    font-weight:bold;
+    margin:10px;
+}
+
+
+.series_products th{
+    color:#000;
+    font-size:12px;
+    font-weight:bold;
+    border-color: #ccc;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.series_products td{
+    color:#000;
+    font-size:12px;
+    font-weight:normal;
+    border-color: #ccc;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.left_cell{
+    float:left;
+    width:40%;
+}
+
+.right_cell{
+    float:right;
+    width:40%;
+}
+
+#two_column_page_main_content {
+	border-width: 0px;
+}

@@ -1,5 +1,7 @@
 from django.db import models
 from filebrowser.fields import FileBrowseField
+#TODO change product.serie to product.series
+#TODO add long_name to Type
 
 from django.utils.translation import ugettext_lazy as _
 from mothertongue.models import MothertongueModelTranslate

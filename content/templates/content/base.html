@@ -14,6 +14,8 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static "content/css/index.css" %}" type="text/css" media="screen"/>
     <link rel="stylesheet" href="{% static "content/css/prettyPhoto.css" %}" type="text/css" media="screen"/>
+
+     {% block additional_meta %} {% endblock %}
 </head>
 
 <body>

@@ -1,0 +1,79 @@
+{% extends "content/page_with_series_left_sidebar.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+{% block title %} {{category.name|capfirst}}&nbsp;{{series.name}} {% endblock %}
+
+{% block additional_meta %}
+    <link rel="stylesheet" href="{% static 'content/css/series.css' %}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{% static 'content/datatables/css/demo_page.css' %}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{% static 'content/datatables/css/jquery.dataTables.css' %}" type="text/css" media="screen"/>
+
+    <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.js' %}"></script>
+    <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.js' %}"></script>
+    <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.russian.js' %}"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            var code = "{{LANGUAGE_CODE}}";
+            var options = {"iDisplayLength": 10, "iDisplayStart": 10}
+            if(code == "ru") {
+                options["oLanguage"] = russian_translate;
+            }
+
+            $('#series_products').dataTable(options);
+        } );
+    </script>
+{% endblock %}
+
+
+{%block page_content %}
+        <div id="series_products_header">{% trans "Series" %}&nbsp;{{series.name}}</div>
+        <table class="series_products" id="series_products">
+            <thead>
+                <tr>
+                    <th rowspan="2">{% trans "Model" %}</th>
+                    <th colspan="2">
+                        {% trans "Frequency GHz"%} <br/>
+                    </th>
+                    <th colspan="2" >
+                     {% trans "Insertion losses, dB"%} <br/>
+
+                    </th>
+                    <th colspan="2" >
+                     {% trans "Inverse losses, dB"%} <br/>
+
+                    </th>
+                    <th rowspan="2">
+                     {% trans "VSWR"%} <br/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>{% trans "min"%}</th>
+                    <th>{% trans "max"%}</th>
+                    <th>{% trans "min"%}</th>
+                    <th>{% trans "max"%}</th>
+                    <th>{% trans "min"%}</th>
+                    <th>{% trans "max"%}</th>
+                </tr>
+
+            </thead>
+
+            <tbody class="series_products_tbody">
+                {% for product in products %}
+                    <tr>
+                        <td><a href ="{% url show_product product_id=product.id %}"> {{product.name}} </a></td>
+                        <td>{{product.frequency_min}}</td>
+                        <td>{{product.frequency_max}}</td>
+                        <td>{{product.insertion_losses_min}}</td>
+                        <td>{{product.insertion_losses_max}}</td>
+                        <td>{{product.inverse_losses_min}}</td>
+                        <td>{{product.inverse_losses_max}}</td>
+                        <td>{{product.vswr}}</td>
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+{%endblock%}
+
