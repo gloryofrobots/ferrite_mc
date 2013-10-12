@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-09 12:53+0300\n"
+"POT-Creation-Date: 2013-10-12 14:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: content/models.py:12 content/models.py:39
 msgid "Page title"
-msgstr ""
+msgstr "заголовок страницы"
 
 #: content/models.py:13 content/models.py:40
 msgid "content"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: content/models.py:13 content/models.py:40
 msgid "Page content"
-msgstr ""
+msgstr "контент страницы"
 
 #: content/models.py:14 content/models.py:41
 msgid "keywords"
@@ -43,8 +43,8 @@ msgstr ""
 msgid "Page keywords"
 msgstr ""
 
-#: content/models.py:15 content/models.py:42 products/models.py:72
-#: products/models.py:94
+#: content/models.py:15 content/models.py:42 products/models.py:78
+#: products/models.py:100
 msgid "description"
 msgstr ""
 
@@ -68,6 +68,10 @@ msgstr ""
 msgid "Is this page published"
 msgstr ""
 
+#: content/models.py:24
+msgid "Is this shows in menu"
+msgstr ""
+
 #: content/models.py:28 mothertongue/tests/models.py:13
 msgid "translations"
 msgstr ""
@@ -76,13 +80,75 @@ msgstr ""
 msgid "front_page"
 msgstr ""
 
-#: content/views.py:13
-msgid "Test String"
-msgstr "Тестовая строка"
-
-#: content/templates/content/base.html:42
+#: content/templates/content/base.html:43
+#: content/templates/content/base.html:76
 msgid "Ferrite microwave components"
 msgstr "Ферритовые микрополосковые компоненты"
+
+#: content/templates/content/folderpage.html:28
+msgid "Read more"
+msgstr "Подробнее"
+
+#: content/templates/content/page_with_series_left_sidebar.html:8
+#: content/templates/content/series.html:35
+msgid "Series"
+msgstr "Серия"
+
+#: content/templates/content/product.html:16
+msgid "Serie"
+msgstr "Серия"
+
+#: content/templates/content/product.html:61
+#: content/templates/content/series.html:41
+msgid "Frequency GHz"
+msgstr "Частота ГГц"
+
+#: content/templates/content/product.html:64
+#: content/templates/content/series.html:44
+msgid "Insertion losses, dB"
+msgstr "Потери,  	дБ"
+
+#: content/templates/content/product.html:67
+#: content/templates/content/series.html:48
+msgid "Inverse losses, dB"
+msgstr "Развязки,  	дБ"
+
+#: content/templates/content/product.html:70
+#: content/templates/content/series.html:52
+msgid "VSWR"
+msgstr "КСВН"
+
+#: content/templates/content/product.html:73
+msgid "Temperature (&#176;C)"
+msgstr "Температура (&#176;C)"
+
+#: content/templates/content/product.html:76
+msgid "Max input power(W)"
+msgstr "Макс. мощность (Вт)"
+
+#: content/templates/content/product.html:80
+#: content/templates/content/product.html:82
+#: content/templates/content/product.html:84
+#: content/templates/content/product.html:86
+#: content/templates/content/series.html:56
+#: content/templates/content/series.html:58
+#: content/templates/content/series.html:60
+msgid "min"
+msgstr "мин."
+
+#: content/templates/content/product.html:81
+#: content/templates/content/product.html:83
+#: content/templates/content/product.html:85
+#: content/templates/content/product.html:87
+#: content/templates/content/series.html:57
+#: content/templates/content/series.html:59
+#: content/templates/content/series.html:61
+msgid "max"
+msgstr "макс."
+
+#: content/templates/content/series.html:39
+msgid "Model"
+msgstr "Модель"
 
 #: filebrowser/actions.py:51
 #, python-format
@@ -1255,30 +1321,51 @@ msgstr ""
 msgid "French"
 msgstr ""
 
-#: products/models.py:18
+#: products/models.py:15
+msgid "category translations"
+msgstr ""
+
+#: products/models.py:23
 msgid "category_instance"
 msgstr ""
 
-#: products/models.py:46
+#: products/models.py:44 products/models.py:63
+msgid "Product type name"
+msgstr ""
+
+#: products/models.py:45 products/models.py:64
+msgid "Product type long name"
+msgstr ""
+
+#: products/models.py:47
+msgid "Direct flow image"
+msgstr ""
+
+#: products/models.py:50
+msgid "Reverse flow image"
+msgstr ""
+
+#: products/models.py:52
 msgid "type translations"
 msgstr ""
 
-#: products/models.py:55
+#: products/models.py:61
 msgid "type_instance"
 msgstr ""
 
-#: products/models.py:72 products/models.py:94
+#: products/models.py:78 products/models.py:100
 msgid "Product description"
 msgstr ""
 
-#: products/models.py:84
+#: products/models.py:90
 msgid "product translations"
 msgstr ""
 
-#: products/models.py:92
+#: products/models.py:98
 msgid "product_instance"
 msgstr ""
 
 #: tinymce/views.py:67
 msgid "Error running spellchecker"
 msgstr ""
+

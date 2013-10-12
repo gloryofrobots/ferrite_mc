@@ -15,13 +15,15 @@ class FrontPageTranslationInline(admin.StackedInline):
     model = FrontPageTranslation
     extra = 1
     max_num = len(settings.LANGUAGES)-1
+
+    inline_classes = ('grp-collapse grp-open',)
+
     fieldsets = (
         (None, {
             'fields': ['language',]
         }),
         ('Translation', {
-            'fields': ['title','content','description','keywords'],
-            'classes': ['collapse',],
+            'fields': ['title','content','description','keywords']
         }),
     )
     formfield_overrides = {
@@ -30,7 +32,7 @@ class FrontPageTranslationInline(admin.StackedInline):
 
 # create the admin model
 class FrontPageAdmin(admin.ModelAdmin):
-    fields = ['title','content','description','keywords','alias','menuindex','parent','ispublished','isfolder',]
+    fields = ['title','content','description','keywords','alias','menuindex','parent','ispublished','isfolder','inmenu']
     inlines = (FrontPageTranslationInline,)
 
 # register with CMS

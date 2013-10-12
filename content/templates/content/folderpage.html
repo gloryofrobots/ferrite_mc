@@ -1,0 +1,32 @@
+{% extends "content/frontpage.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %} {{page.title|safe}} {% endblock %}
+{% block additional_meta %}
+    <link rel="stylesheet" href="{% static 'content/css/folderpage.css' %}" type="text/css" media="screen"/>
+        <script language="JavaScript">
+            $(document).ready(function() {
+                 $(".child_preview_content").each(
+                     function() {
+                        if ($(this).height() > 200) {
+                            $(this).height('200px');
+                        }
+                        if ($(this).height() < 50) {
+                            $(this).height('50px');
+                        }
+                    }
+                );
+              });
+        </script>
+{% endblock %}
+
+{%block page_content %}
+        {% for child in children %}
+            <div class="child_preview">
+                <div class="child_preview_header">{{child.title}}</div>
+                <div class="child_preview_content">{{child.content|safe}}</div>
+                <div class="child_preview_link"><a href ="{% url show_page alias=child.alias %}">{% trans "Read more" %}</a></div>
+            </div>
+        {% endfor %}
+{%endblock%}
+

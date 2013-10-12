@@ -5,11 +5,10 @@ from django.http import Http404
 from django.template import RequestContext
 from content.models import FrontPage
 from products.models import Category, Series, Product
-# very simple homepage view for demo purposes.
-def show_main(request):
-    main_page = FrontPage.objects.all()[0]
-    return render_to_response('content/frontpage.html', {'page': main_page}, context_instance=RequestContext(request))
 
+def show_main(request):
+    page = get_object_or_404(FrontPage, alias='main', )
+    return show_page_content(request, page)
 
 def show_category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
@@ -27,7 +26,7 @@ def show_series(request, series_id):
 
 
 def _show_series_instance(request, series):
-    sister_series = series.category.series_set.all()
+    sister_series = series.category.series_set.exclude(id=series.id)
     products = series.product_set.all()
     return render_to_response('content/series.html',
                               {'category': series.category, 'sister_series': sister_series, 'series': series,
@@ -37,15 +36,38 @@ def _show_series_instance(request, series):
 
 def show_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    series = product.serie
-    sister_series = series.category.series_set.all()
+    series = product.series
+    other_products = series.product_set.exclude(id=product_id)
+    #sister_series = series.category.series_set.all()
     product_images = product.productimage_set.all()
     return render_to_response('content/product.html',
-                              {'category': series.category, 'sister_series': sister_series, 'series': series,
+                              {'category': series.category, 'other_products': other_products, 'series': series,
                                'product': product, 'product_images': product_images},
                               context_instance=RequestContext(request))
     pass
 
 
-def show_page(request, page_alias):
+def show_page(request, alias):
+    page = get_object_or_404(FrontPage, alias=alias, ispublished=True)
+    return show_page_instance(request, page)
+
+
+def show_page_instance(request, page):
+    if page.isfolder:
+        return show_folder_page(request, page)
+    else:
+        return show_article(request, page)
+
+
+def show_folder_page(request, page):
+    children = FrontPage.objects.filter(parent=page)
+    return render_to_response('content/folderpage.html', {'children':children, 'page': page}, context_instance=RequestContext(request))
     pass
+
+
+def show_page_content(request, page):
+    return render_to_response('content/frontpage.html', {'page': page}, context_instance=RequestContext(request))
+
+
+def show_article(request, page):
+    return render_to_response('content/article.html', {'page': page}, context_instance=RequestContext(request))

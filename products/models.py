@@ -41,16 +41,17 @@ class Series(models.Model):
         return u'%s' % (self.name)
 
 class Type(MothertongueModelTranslate):
-    name = models.CharField(max_length=255, help_text='Product type name')
+    name = models.CharField(max_length=255, help_text=_('Product type name'))
+    long_name = models.CharField(max_length=255, help_text=_('Product type long name'))
     direct_flow_image = FileBrowseField("Image", max_length=200, directory="images/", extensions=[".jpg", ".jpeg", ".png"],
-                            blank=True, null=True, help_text='Direct flow image')
+                            blank=True, null=True, help_text=_('Direct flow image'))
     reverse_flow_image = FileBrowseField("Image", max_length=200, directory="images/",
                                         extensions=[".jpg", ".jpeg", ".png"],
-                                        blank=True, null=True, help_text='Reverse flow image')
+                                        blank=True, null=True, help_text=_('Reverse flow image'))
 
     translations = models.ManyToManyField('TypeTranslation', blank=True, verbose_name=_('type translations'))
     translation_set = 'typetranslation_set'
-    translated_fields = ['name']
+    translated_fields = ['name','long_name']
 
     def __unicode__(self):
         return u'%s' % (self.name)
@@ -59,8 +60,8 @@ class Type(MothertongueModelTranslate):
 class TypeTranslation(models.Model):
     type_instance = models.ForeignKey('Type', verbose_name=_('type_instance'))
     language = models.CharField(max_length=5, choices=settings.LANGUAGES[1:], default=settings.LANGUAGES[0][0])
-    name = models.CharField(max_length=255, help_text='Product type name')
-
+    name = models.CharField(max_length=255, help_text=_('Product type name'))
+    long_name = models.CharField(max_length=255, help_text=_('Product type long name'))
 
     class Meta(object):
         # ensures we can only have on translation for each language for each page
@@ -71,7 +72,7 @@ class TypeTranslation(models.Model):
 
 
 class Product(MothertongueModelTranslate):
-    serie = models.ForeignKey(Series)
+    series = models.ForeignKey(Series)
     type = models.ForeignKey(Type)
     name = models.CharField(max_length=100)
     description = tinymce_models.HTMLField(_('description'), blank=True, help_text=_('Product description'))
@@ -91,7 +92,7 @@ class Product(MothertongueModelTranslate):
     translated_fields = ['description']
 
     def __unicode__(self):
-        return u'%s-%s' % (self.serie, self.name)
+        return u'%s-%s' % (self.series, self.name)
 
 class ProductTranslation(models.Model):
     product_instance = models.ForeignKey('Product', verbose_name=_('product_instance'))

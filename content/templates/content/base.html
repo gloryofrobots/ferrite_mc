@@ -4,17 +4,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css"/>
-
+     {% block pre_meta %} {% endblock %}
     <title>
         {% block title %} {% endblock %}
     </title>
 
-    {% load staticfiles %}
-    <link rel="stylesheet" href="{% static "content/css/index.css" %}" type="text/css" media="screen"/>
-    <link rel="stylesheet" href="{% static "content/css/prettyPhoto.css" %}" type="text/css" media="screen"/>
 
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'content/css/index.css' %}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{% static 'content/css/prettyPhoto.css' %}" type="text/css" media="screen"/>
+    <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.js' %}"></script>
      {% block additional_meta %} {% endblock %}
 </head>
 
@@ -39,10 +40,18 @@
 
         {% load i18n %}
         <div id="page_heading">
-            <h1>{% trans "Ferrite microwave components" %} </h1>
+            <h1><a class="main_page_header_link" href="{% url main %}"> {% trans "Ferrite microwave components" %}</a> </h1>
         </div>
 
 
+    <!-- Start of Page Menu -->
+
+    <div class="page_menu">
+        {% load frontpage_navigation %}
+        {% frontpage_navigation %}
+    </div>
+
+    <!-- End of Page Menu -->
         <div class="clearthis">&nbsp;</div>
 
     </div>
@@ -50,14 +59,6 @@
     <!-- End of Page Header -->
 
 
-    <!-- Start of Page Menu -->
-
-    <div id="page_menu">
-        {% load frontpage_navigation %}
-        {% frontpage_navigation %}
-    </div>
-
-    <!-- End of Page Menu -->
 
     <div id="main_content">
 
@@ -71,13 +72,10 @@
     <!-- Start of Page Footer -->
 
     <div id="page_footer">
-
-
         <div id="powered_by">
-            Powered by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a>
+           {% trans "Ferrite microwave components" %}
         </div>
 
-        <div class="clearthis">&nbsp;</div>
     </div>
 
     <!-- End of Page Footer -->

@@ -1,11 +1,11 @@
 {% extends "content/two_column_page.html" %}
 {% load i18n %}
 
-{% block left_sidebar_header %} {{category.name}}  {%endblock%}
+{% block left_sidebar_header %} {{category.name|capfirst}}  {%endblock%}
 
 {% block left_sidebar_items %}
     {% for sister in sister_series %}
-        <li><a href="{% url show_series series_id=sister.id %}">{% trans "Series" %}&nbsp;{{sister.name}}</a> </li>
+        <li><a href="{% url show_series series_id=sister.id %}">{% trans "Series" %}&nbsp;{{sister.name|capfirst}}</a> </li>
     {%endfor%}
 {%endblock%}
 

@@ -15,13 +15,13 @@ class FrontPage(MothertongueModelTranslate):
     description = models.CharField(_('description'), max_length=255, help_text=_('Page description'))
 
     alias = models.CharField(_('alias'), max_length=200, help_text=_('Page Url Alias'))
-    isfolder = models.BooleanField(help_text=_('Is this page a folder'))
+    isfolder = models.BooleanField(help_text=_('Is this page a folder'), default=False)
 
-    menuindex = models.PositiveSmallIntegerField()
+    menuindex = models.PositiveSmallIntegerField(default=0)
     parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, default=None)
 
-    ispublished = models.BooleanField(help_text=_('Is this page published'))
-
+    ispublished = models.BooleanField(help_text=_('Is this page published'), default=True)
+    inmenu = models.BooleanField(help_text=_('Is this shows in menu'), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
 

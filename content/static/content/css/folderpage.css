@@ -1,0 +1,30 @@
+.child_preview {
+    width:100%;
+    clear:both;
+}
+
+.child_preview_header {
+    font-weight:normal;
+    margin-top:10px;
+    font-size:16px;
+    padding:10px;
+    text-align:center;
+    width:100%;
+    background:#B7CEEC;
+}
+
+.child_preview_content {
+    width:100%;
+
+    overflow:hidden;
+    font-weight:normal;
+    font-size:12px;
+}
+
+ .child_preview_link {
+
+}
+
+#one_column_page_main_content {
+	border: 0px;
+}

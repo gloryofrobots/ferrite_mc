@@ -52,16 +52,15 @@ p {
 
 #page_header {
 	width: 100%;
-	height: 113px;
 	color: #fff;
 	margin-top: 5px;
-	background: #1F202B;
+	background: #566D7E;
 	overflow: hidden;
 }
 
 #page_header a {
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 #page_header a:hover {
@@ -77,6 +76,15 @@ p {
 
 }
 
+#page_header .main_page_header_link {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#page_header .main_page_header_link:hover {
+    color: #fff;
+}
 
 #page_headerlinks {
 	padding-right: 20px;
@@ -149,46 +157,50 @@ p {
 
 /* Main Navigation Menu */
 
-#page_menu {
-	margin-bottom: 1px;
-	margin-top: 5px;
-	width: 100%;
-	height: 21px;
+.page_menu {
+	margin-bottom: 15px;
+	margin-top: 15px;
+	/*width: 100%;
+	height: 21px;*/
+	float:right;
 }
 
-#page_menu ul {
-	width: 100%;
-	height: 21px;
+.page_menu ul {
+	/*width: 100%;
+	height: 21px;*/
 	list-style-type: none;
 	overflow: hidden;
 }
 
-#page_menu li {
+.page_menu li {
 	margin-right: 1px;
 
-	width: 249px;
+	/*width: 249px;
 	height: 21px;
-	float: left;
 	background: #1F202B;
+	*/
+
+	margin-right:10px;
+	float: left;
 	overflow: hidden;
 	text-align: center;
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: bold;
 }
 
-#page_menu li.last {
+.page_menu li.last {
 	margin-right: 0px;
 	width: 130px;
 }
 
-#page_menu a {
+.page_menu a {
 	padding-top: 3px;
 	display: block;
 	color: #fff;
 	text-decoration: none;
 }
 
-#page_menu a:hover {
+.page_menu a:hover {
 	color: #e1e1e1;
 }
 
@@ -218,9 +230,9 @@ p {
     height:300px;
 	margin-bottom: 1px;
 	padding: 1px 1px 1px 0px;
-	border-color: #1F202B;
+	/*border-color: #1F202B;
 	border-width: 0px 1px 1px 1px;
-	border-style: solid;
+	border-style: solid;*/
 	text-align: center;
 	font-weight: bold;
 }
@@ -229,14 +241,14 @@ p {
 	margin-bottom: 2px;
 	width: 167px;
 	height: 20px;
-	background-color: #1F202B;
+	background-color: #ccc;
 	overflow: hidden;
 }
 
 #categories_header h2 {
 	margin-top: 3px;
 	margin-left: 5px;
-	color: #fff;
+	color: #000;
 	font-size: 12px;
 }
 
@@ -277,12 +289,11 @@ p {
 
 #one_column_page_main_content {
 	margin-top: 10px;
-	padding:10px;
 	min-height:300px;
 	text-align: left;
-	border-color: #9e9ec3;
+	/*border-color: #9e9ec3;
 	border-width: 1px 1px 1px 1px;
-	border-style: solid;
+	border-style: solid;*/
 	overflow:hidden;
 }
 
@@ -292,19 +303,32 @@ p {
 	margin-top: 10px;
 
 	width: 805px;
-	min-height:300px;
+	min-height:100%;
 	text-align: center;
 	float: right;
-	border-color: #9e9ec3;
+	/*border-color: #9e9ec3;
 	border-width: 1px 1px 1px;
-	border-style: solid;
+	border-style: solid;*/
 	overflow:hidden;
 }
 
 /* Page Footer */
+.frontpage_header {
+    text-align: center;
+    font-weight:bold;
+    font-size:20px;
+    width:100%;
+    background:#B7CEEC;
+    padding:10px;
+    margin-bottom:10px;
+    margin-top:10px;
+}
 
 #page_footer {
 	width: 100%;
+	height:50px;
+	margin-top:30px;
+	background:#566D7E;
 }
 
 #powered_by {

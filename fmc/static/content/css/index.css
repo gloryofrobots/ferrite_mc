@@ -48,14 +48,6 @@ p {
 	width: 1000px;
 }
 
-input {
-	padding-left: 2px;
-	background-color: #fff;
-	font-family: tahoma, arial, sans-serif;
-	font-size: 11px;
-}
-
-
 /* Page Header */
 
 #page_header {
@@ -226,9 +218,9 @@ input {
     height:300px;
 	margin-bottom: 1px;
 	padding: 1px 1px 1px 0px;
-	border-color: #1F202B;
+	/*border-color: #1F202B;
 	border-width: 0px 1px 1px 1px;
-	border-style: solid;
+	border-style: solid;*/
 	text-align: center;
 	font-weight: bold;
 }
@@ -303,10 +295,9 @@ input {
 	min-height:300px;
 	text-align: center;
 	float: right;
-
-	border-color: #9e9ec3;
+	/*border-color: #9e9ec3;
 	border-width: 1px 1px 1px;
-	border-style: solid;
+	border-style: solid;*/
 	overflow:hidden;
 }
 
