@@ -3,11 +3,12 @@
 {% load staticfiles %}
 
 {% block pre_meta %}
-    <meta name="description" content="{% trans 'description and characteristics of ferrite microwave component' %} {{product.name}}. {% trans 'Product custom manufacturing.' %} " />
+<meta name="description"
+      content="{% trans 'description and characteristics of ferrite microwave component' %} {{product.name}}. {% trans 'Product custom manufacturing.' %} "/>
 {% endblock %}
 
 {% block additional_meta %}
-    <link rel="stylesheet" href="{% static 'content/css/product.css' %}" type="text/css" media="screen"/>
+<link rel="stylesheet" href="{% static 'content/css/product.css' %}" type="text/css" media="screen"/>
 {% endblock %}
 
 {% block title %} {{category.name|capfirst}}&nbsp;{{series.name}}&nbsp;{{product.name}} {% endblock %}
@@ -15,92 +16,101 @@
 {% block left_sidebar_header %} {% trans "Series" %} {{series.name}}  {%endblock%}
 
 {% block left_sidebar_items %}
-    {% for other_product in other_products %}
-        <li><a href="{% url 'show_product' product_id=other_product.id %}">{{other_product.name}}&nbsp;({{other_product.type.name}})</a> </li>
-    {%endfor%}
+{% for other_product in other_products %}
+<li><a href="{% url 'show_product' product_id=other_product.id %}">{{other_product.name}}&nbsp;({{other_product.type.name}})</a>
+</li>
+{%endfor%}
 {%endblock%}
 
 {%block page_content %}
- <div class="product_header">{{product.type.long_name|capfirst}} <br /> {{product.name}}</div>
+<div class="product_header">{{product.type.long_name|capfirst}} <br/> {{series.name}}-{{product.name}}</div>
 
-    <table class="product_images_table">
-        <tr>
-            <td >
-                <table class="product_type_table">
-                    <tr>
-                        <td>{{product.name}} </td><td><img src="{{product.type.direct_flow_image.url}}" /></td>
-                    </tr>
 
-                    {%if product.type.reverse_flow_image.url %}
-                        <tr>
-                            <td>{{product.name}}-1</td>
-                            <td><img src="{{product.type.reverse_flow_image.url}}"  /></td>
-                        </tr>
-                    {%endif%}
-                </table>
-            </td>
-             {% for product_image in product_images %}
-                 <td>
-                     <img src="{{product_image.image.url}}" class="product_image" />
-                 </td>
-             {%endfor%}
-        </tr>
-    </table>
-    <!-- END IMAGE TABLE -->
+<!-- PRODUCT TABLE -->
+<table class="product_table">
+    <thead>
+    <tr>
+        <th colspan="2">
+            {% trans "Frequency, GHz"%}
+        </th>
+        <th colspan="2">
+            {% trans "Insertion losses, dB"%}
+        </th>
+        <th colspan="2">
+            {% trans "Inverse losses, dB"%}
+        </th>
+        <th rowspan="2">
+            {% trans "VSWR"%}
+        </th>
+        <th colspan="2">
+            {% trans "Temperature (&#176;C)"%} <br/>
+        </th>
+        <th rowspan="2">
+            {% trans "Max input power(W)"%} <br/>
+        </th>
+    </tr>
+    <tr>
+        <th>{% trans "min"%}</th>
+        <th>{% trans "max"%}</th>
+        <th>{% trans "min"%}</th>
+        <th>{% trans "max"%}</th>
+        <th>{% trans "min"%}</th>
+        <th>{% trans "max"%}</th>
+        <th>{% trans "min"%}</th>
+        <th>{% trans "max"%}</th>
+    </tr>
+    </thead>
 
-    <!-- PRODUCT DESCRIPTION -->
-    <div class="product_description">{{product.description|safe}}</div>
-    <!-- END PRODUCT DESCRIPTION-->
-
-    <!-- PRODUCT TABLE -->
-    <table class="product_table"  >
-        <thead>
-            <tr>
-                <th colspan="2">
-                    {% trans "Frequency, GHz"%}
-                </th>
-                <th colspan="2" >
-                 {% trans "Insertion losses, dB"%}
-                </th>
-                <th colspan="2" >
-                 {% trans "Inverse losses, dB"%}
-                </th>
-                <th rowspan="2">
-                 {% trans "VSWR"%}
-                </th>
-                 <th colspan="2">
-                 {% trans "Temperature (&#176;C)"%} <br/>
-                </th>
-                <th rowspan="2">
-                 {% trans "Max input power(W)"%} <br/>
-                </th>
-            </tr>
-            <tr>
-                <th>{% trans "min"%}</th>
-                <th>{% trans "max"%}</th>
-                <th>{% trans "min"%}</th>
-                <th>{% trans "max"%}</th>
-                <th>{% trans "min"%}</th>
-                <th>{% trans "max"%}</th>
-                <th>{% trans "min"%}</th>
-                <th>{% trans "max"%}</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>{{product.frequency_min}}</td>
-                <td>{{product.frequency_max}}</td>
-                <td>{{product.insertion_losses_min}}</td>
-                <td>{{product.insertion_losses_max}}</td>
-                <td>{{product.inverse_losses_min}}</td>
-                <td>{{product.inverse_losses_max}}</td>
-                <td>{{product.vswr}}</td>
-                <td>{{product.temperature_min}}</td>
-                <td>{{product.temperature_max}}</td>
-                <td>{{product.input_power}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <tbody>
+    <tr>
+        <td>{{product.frequency_min}}</td>
+        <td>{{product.frequency_max}}</td>
+        <td>{{product.insertion_losses_min}}</td>
+        <td>{{product.insertion_losses_max}}</td>
+        <td>{{product.inverse_losses_min}}</td>
+        <td>{{product.inverse_losses_max}}</td>
+        <td>{{product.vswr}}</td>
+        <td>{{product.temperature_min}}</td>
+        <td>{{product.temperature_max}}</td>
+        <td>{{product.input_power}}</td>
+    </tr>
+    </tbody>
+</table>
 <!-- END PRODUCT TABLE -->
+
+<!-- PRODUCT DESCRIPTION -->
+<div class="product_description">{{product.description|safe}}</div>
+<!-- END PRODUCT DESCRIPTION-->
+
+
+{% for product_image in product_images %}
+<div class="product_image">
+    <img src="{{product_image.image.url}}" class="product_image"/>
+</div>
+{%endfor%}
+
+<div class="clearthis">&nbsp;</div>
+
+<div class="product_type_table_container">
+    <table class="product_type_table">
+        <tr>
+            <td>
+                <div class="type_signature">{{series.name}}-{{product.name}}</div>
+            </td>
+            <td><img src="{{product.type.direct_flow_image.url}}"/></td>
+        </tr>
+
+        {%if product.type.reverse_flow_image.url %}
+        <tr>
+            <td>
+                <div class="type_signature">{{series.name}}-{{product.name}}-1</div>
+            </td>
+            <td><img src="{{product.type.reverse_flow_image.url}}"/></td>
+        </tr>
+        {%endif%}
+    </table>
+</div>
+<!-- END IMAGE TABLE -->
+
+
 {% endblock %}

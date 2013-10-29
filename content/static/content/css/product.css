@@ -3,9 +3,11 @@
     display:block;
     float:left;
     margin-top:20px;
-    margin-left:10px;
-}
 
+}
+.type_signature{
+    font-size:24px;
+}
 
 .product_description {
     font-weight:normal;
@@ -57,8 +59,12 @@
     border-collapse: separate;
     border-spacing: 25px;
     *border-collapse: expression('separate', cellSpacing = '25px');
+
 }
 
 .product_type_table td {
     vertical-align:middle;
+}
+.product_type_table_container {
+    text-align:center;
 }
