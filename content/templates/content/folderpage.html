@@ -25,7 +25,7 @@
             <div class="child_preview">
                 <div class="child_preview_header">{{child.title}}</div>
                 <div class="child_preview_content">{{child.content|safe}}</div>
-                <div class="child_preview_link"><a href ="{% url show_page alias=child.alias %}">{% trans "Read more" %}</a></div>
+                <div class="child_preview_link"><a href ="{% url 'show_page' alias=child.alias %}">{% trans "Read more" %}</a></div>
             </div>
         {% endfor %}
 {%endblock%}

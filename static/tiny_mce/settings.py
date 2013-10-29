@@ -1,5 +1,5 @@
 # Django settings for fmc project.
-
+sadasd
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -12,9 +12,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'fmcdata', # Or path to database file if using sqlite3.
-        'USER': 'root', # Not used with sqlite3.
-        'PASSWORD': 'illuminator', # Not used with sqlite3.
+        'NAME': 'mwfcompo_fmc', # Or path to database file if using sqlite3.
+        'USER': 'mwfcompo_fmc', # Not used with sqlite3.
+        'PASSWORD': '97A9SxOI130', # Not used with sqlite3.
         'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '', # Set to empty string for default. Not used with sqlite3.
     }
@@ -22,7 +22,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['.mwfcomponent.com']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -52,7 +52,7 @@ LOCALEURL_USE_ACCEPT_LANGUAGE = True
 USE_I18N = True
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
-USE_L10N = False
+USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
@@ -61,25 +61,18 @@ from os.path import abspath, dirname
 ROOT_PATH = abspath(dirname(__file__))
 APP_ROOT_PATH = abspath(dirname(ROOT_PATH))
 
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = APP_ROOT_PATH + '/static/'
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
+#MEDIA_ROOT = APP_ROOT_PATH + '/media/'
+MEDIA_ROOT = '/home/mwfcompo/domains/mwfcomponent.com/public_html/media/'
+MEDIA_URL = '/media/'
+
+#STATIC_ROOT = APP_ROOT_PATH + '/static/'
+STATIC_ROOT = '/home/mwfcompo/domains/mwfcomponent.com/public_html/static/'
 STATIC_URL = '/static/'
+ADMIN_MEDIA_PREFIX = '/media/'
+
 LOCALE_PATHS = (
     APP_ROOT_PATH + '/locale/',
 )
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = APP_ROOT_PATH + '/media/'
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/media/'
 
 TINYMCE_JS_URL = STATIC_URL + '/tiny_mce/tiny_mce.js'
 TINYMCE_JS_ROOT = STATIC_ROOT + '/tiny_mce/'
@@ -103,6 +96,7 @@ TINYMCE_DEFAULT_CONFIG = {
 # Additional locations of static files
 STATICFILES_DIRS = (
     APP_ROOT_PATH+"/tinymce/js",
+    #"/home/gloryofrobots/develop/django_projects/fmc/tinymce/js",
     #"/home/gloryofrobots/develop/django_projects/fmc/content/static"
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -152,7 +146,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 ROOT_URLCONF = 'fmc.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'fmc.wsgi.application'
+#WSGI_APPLICATION = 'fmc.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

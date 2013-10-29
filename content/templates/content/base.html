@@ -6,6 +6,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css"/>
+    {% load i18n %}
      {% block pre_meta %} {% endblock %}
     <title>
         {% block title %} {% endblock %}
@@ -38,9 +39,9 @@
         </div>
         {% endif %}
 
-        {% load i18n %}
+
         <div id="page_heading">
-            <h1><a class="main_page_header_link" href="{% url main %}"> {% trans "Ferrite microwave components" %}</a> </h1>
+            <h1><a class="main_page_header_link" href="{% url 'main' %}"> {% trans "Ferrite microwave components" %}</a> </h1>
         </div>
 
 

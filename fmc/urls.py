@@ -16,6 +16,8 @@ urlpatterns = patterns('',
                        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
                         {'document_root': settings.MEDIA_ROOT}),
 
+
+
                        (r'^grappelli/', include('grappelli.urls')), # grappelli URLS
                        (r'^admin/', include(admin.site.urls)), # admin site
                        url(r'^admin/filebrowser/', include(site.urls)),

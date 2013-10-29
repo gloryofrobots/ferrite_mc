@@ -1,9 +1,9 @@
 <ul>
     {% for category in categories %}
-         <li><a href="{% url show_category  category_id=category.id %}">{{category.name|capfirst}}</a></li>
+         <li><a href="{% url 'show_category'  category_id=category.id %}">{{category.name|capfirst}}</a></li>
     {% endfor %}
 
     {% for page in root_pages %}
-         <li><a href="{% url show_page  alias=page.alias %}">{{page.title|capfirst}}</a></li>
+         <li><a href="{% url 'show_page'  alias=page.alias %}">{{page.title|capfirst}}</a></li>
     {% endfor %}
 </ul>

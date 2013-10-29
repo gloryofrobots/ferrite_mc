@@ -88,9 +88,9 @@ class CategoryAdmin(admin.ModelAdmin):
 class SeriesProductInline(admin.StackedInline):
     model = Product
     extra = 1
-    fields = ['type', 'name', 'description',
-              'frequency_min', 'frequency_max', 'insertion_losses_max', 'insertion_losses_min',
-              'inverse_losses_max', 'inverse_losses_min', 'vswr', 'temperature_max', 'temperature_min', 'input_power']
+    fields = [ 'type', 'name', 'description',
+              'frequency_min', 'frequency_max', 'insertion_losses_min', 'insertion_losses_max',
+              'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max', 'input_power']
 
 
 

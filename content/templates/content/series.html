@@ -4,8 +4,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block pre_meta %}
-    <meta name="description" content="" />
-    <meta name="keywords" content="">
+      <meta name="description" content="{% trans 'Ferrite microwave components in the series' %} {{series.name}}. {% trans 'Products comparison. Custom manufacturing.' %} " />
 {% endblock %}
 
 {% block title %} {{category.name|capfirst}}&nbsp;{{series.name}} {% endblock %}
@@ -17,15 +16,18 @@
 
     <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.js' %}"></script>
     <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.russian.js' %}"></script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.commasort.js' %}"></script>
+
+<script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             var code = "{{LANGUAGE_CODE}}";
-            var options = {"iDisplayLength": 10, "iDisplayStart": 10}
+            var options = {"iDisplayLength": 100, "iDisplayStart": 10}
             if(code == "ru") {
                 options["oLanguage"] = russian_translate;
             }
 
-            $('#series_products').dataTable(options);
+            var oTable = $('#series_products').dataTable(options);
+            oTable.fnSort( [ [2,'asc'] ] );
         } );
     </script>
 {% endblock %}
@@ -37,6 +39,7 @@
             <thead>
                 <tr>
                     <th rowspan="2">{% trans "Model" %}</th>
+                    <th rowspan="2">{% trans "Type" %}</th>
                     <th colspan="2">
                         {% trans "Frequency, GHz"%} <br/>
                     </th>
@@ -66,7 +69,8 @@
             <tbody class="series_products_tbody">
                 {% for product in products %}
                     <tr>
-                        <td><a href ="{% url show_product product_id=product.id %}"> {{product.name}} </a></td>
+                        <td><a href ="{% url 'show_product' product_id=product.id %}"> {{product.name}} </a></td>
+                         <td> {{product.type.name|capfirst}} </td>
                         <td>{{product.frequency_min}}</td>
                         <td>{{product.frequency_max}}</td>
                         <td>{{product.insertion_losses_min}}</td>

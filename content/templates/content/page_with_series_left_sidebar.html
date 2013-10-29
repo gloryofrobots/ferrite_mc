@@ -5,7 +5,7 @@
 
 {% block left_sidebar_items %}
     {% for sister in sister_series %}
-        <li><a href="{% url show_series series_id=sister.id %}">{% trans "Series" %}&nbsp;{{sister.name|capfirst}}</a> </li>
+        <li><a href="{% url 'show_series' series_id=sister.id %}">{% trans "Series" %}&nbsp;{{sister.name|capfirst}}</a> </li>
     {%endfor%}
 {%endblock%}
 

@@ -6,6 +6,10 @@ from django.template import RequestContext
 from content.models import FrontPage
 from products.models import Category, Series, Product
 
+def show_dummy(request):
+    return render_to_response('content/dummy.html',
+                              context_instance=RequestContext(request))
+
 def show_main(request):
     page = get_object_or_404(FrontPage, alias='main', )
     return show_page_content(request, page)

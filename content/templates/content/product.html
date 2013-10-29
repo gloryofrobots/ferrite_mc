@@ -3,8 +3,7 @@
 {% load staticfiles %}
 
 {% block pre_meta %}
-    <meta name="description" content="" />
-    <meta name="keywords" content="">
+    <meta name="description" content="{% trans 'description and characteristics of ferrite microwave component' %} {{product.name}}. {% trans 'Product custom manufacturing.' %} " />
 {% endblock %}
 
 {% block additional_meta %}
@@ -13,11 +12,11 @@
 
 {% block title %} {{category.name|capfirst}}&nbsp;{{series.name}}&nbsp;{{product.name}} {% endblock %}
 
-{% block left_sidebar_header %} {% trans "Serie" %} {{series.name}}  {%endblock%}
+{% block left_sidebar_header %} {% trans "Series" %} {{series.name}}  {%endblock%}
 
 {% block left_sidebar_items %}
     {% for other_product in other_products %}
-        <li><a href="{% url show_product product_id=other_product.id %}">{{other_product.name}}</a> </li>
+        <li><a href="{% url 'show_product' product_id=other_product.id %}">{{other_product.name}}&nbsp;({{other_product.type.name}})</a> </li>
     {%endfor%}
 {%endblock%}
 
