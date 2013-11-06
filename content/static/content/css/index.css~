@@ -59,11 +59,6 @@ p {
 	text-decoration: underline;
 }
 
-.lang_link_active{
-    color: #ccc;
-    text-decoration: none;
-}
-
 #page_header .lang_link:hover {
 	color: #e1e1e1;
 }
@@ -317,7 +312,7 @@ p {
 
 	width: 805px;
 	min-height:100%;
-
+	text-align: center;
 	float: right;
 	/*border-color: #9e9ec3;
 	border-width: 1px 1px 1px;
@@ -345,7 +340,6 @@ p {
 }
 
 #powered_by {
-    color:#fff;
 	padding-top: 17px;
 	float: right;
 	height: 30px;
@@ -353,7 +347,3 @@ p {
 	margin-right:30px;
 }
 
-.footer_email{
-    font-weight:bold;
-    font-size:16px;
-}

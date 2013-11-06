@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 23:28+0300\n"
+"POT-Creation-Date: 2013-11-04 20:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgid "Page keywords"
 msgstr ""
 
 #: content/models.py:15 content/models.py:42 products/models.py:78
-#: products/models.py:100
+#: products/models.py:105
 msgid "description"
 msgstr ""
 
@@ -80,77 +80,155 @@ msgstr ""
 msgid "front_page"
 msgstr ""
 
-#: content/templates/content/base.html:44
-#: content/templates/content/base.html:77
+#: content/templates/content/base.html:63
 #: content/templates/content/dummy.html:19
 msgid "Ferrite microwave components"
 msgstr "Ферритовые микрополосковые СВЧ компоненты"
+
+#: content/templates/content/base.html:96
+msgid "For questions or suggestions, please contact us by email"
+msgstr ""
+"При возникновении вопросов или предложений, пожалуйста, свяжитесь с нами по "
+"электронной почте"
 
 #: content/templates/content/folderpage.html:28
 msgid "Read more"
 msgstr "Подробнее"
 
 #: content/templates/content/page_with_series_left_sidebar.html:8
-#: content/templates/content/product.html:15
+#: content/templates/content/product.html:18
 #: content/templates/content/series.html:37
 msgid "Series"
 msgstr "Серия"
 
-#: content/templates/content/product.html:6
+#: content/templates/content/product.html:7
 msgid "description and characteristics of ferrite microwave component"
 msgstr "описание и характеристики ферритового микрополоскового СВЧ компонента"
 
-#: content/templates/content/product.html:6
+#: content/templates/content/product.html:7
 msgid "Product custom manufacturing."
 msgstr "Изготовление изделия под заказ."
 
-#: content/templates/content/product.html:60
+#: content/templates/content/product.html:30
+msgid "Сharacteristics"
+msgstr "Характеристики"
+
+#: content/templates/content/product.html:36
 #: content/templates/content/series.html:44
 msgid "Frequency, GHz"
 msgstr "Частота, ГГц"
 
-#: content/templates/content/product.html:63
+#: content/templates/content/product.html:39
 #: content/templates/content/series.html:47
 msgid "Insertion losses, dB"
 msgstr "Потери, дБ"
 
-#: content/templates/content/product.html:66
+#: content/templates/content/product.html:42
 #: content/templates/content/series.html:51
 msgid "Inverse losses, dB"
 msgstr "Развязки, дБ"
 
-#: content/templates/content/product.html:69
+#: content/templates/content/product.html:45
 #: content/templates/content/series.html:55
 msgid "VSWR"
 msgstr "КСВН"
 
-#: content/templates/content/product.html:72
-msgid "Temperature (&#176;C)"
-msgstr "Температура (&#176;C)"
+#: content/templates/content/product.html:48
+msgid "Temperature"
+msgstr "Температура"
 
-#: content/templates/content/product.html:75
-msgid "Max input power(W)"
-msgstr "Макс. мощность (Вт)"
+#: content/templates/content/product.html:51
+msgid "Max input power, W"
+msgstr "Макс. мощность, Вт"
 
-#: content/templates/content/product.html:79
-#: content/templates/content/product.html:81
-#: content/templates/content/product.html:83
-#: content/templates/content/product.html:85
-#: content/templates/content/series.html:59
-#: content/templates/content/series.html:61
-#: content/templates/content/series.html:63
+#: content/templates/content/product.html:55
+#: content/templates/content/product.html:57
+#: content/templates/content/product.html:59
+#: content/templates/content/product.html:61
+#: content/templates/content/series.html:62
+#: content/templates/content/series.html:64
+#: content/templates/content/series.html:66
 msgid "min"
 msgstr "мин."
 
-#: content/templates/content/product.html:80
-#: content/templates/content/product.html:82
-#: content/templates/content/product.html:84
-#: content/templates/content/product.html:86
-#: content/templates/content/series.html:60
-#: content/templates/content/series.html:62
-#: content/templates/content/series.html:64
+#: content/templates/content/product.html:56
+#: content/templates/content/product.html:58
+#: content/templates/content/product.html:60
+#: content/templates/content/product.html:62
+#: content/templates/content/series.html:63
+#: content/templates/content/series.html:65
+#: content/templates/content/series.html:67
 msgid "max"
 msgstr "макс."
+
+#: content/templates/content/product.html:84
+msgid "Remarks"
+msgstr "Примечания"
+
+#: content/templates/content/product.html:88
+msgid ""
+"Direct losses are relative to polycarbonate microstrip line in open space."
+msgstr ""
+"Прямые потери приведены относительно поликоровой микрополосковой линии в "
+"открытом пространстве."
+
+#: content/templates/content/product.html:90
+msgid "Geometry and dimensions of mounting camera is not defined"
+msgstr "Геометрия и габаритные размеры монтажной камеры не определены"
+
+#: content/templates/content/product.html:92
+msgid "Device soldering temperature should not exceed the"
+msgstr "Температура пайки прибора не должна превышать"
+
+#: content/templates/content/product.html:94
+msgid "Peak temperature on the adhesive seams should not exceed the"
+msgstr "Пиковая температура на клеевых швах не более"
+
+#: content/templates/content/product.html:97
+msgid "Matching transformers are optimized for "
+msgstr "Согласующие трансформаторы изделия оптимизированы на"
+
+#: content/templates/content/product.html:98
+msgid "microstrip line with permittivity "
+msgstr "микрополосковую линию с диэлектрической проницаемостью"
+
+#: content/templates/content/product.html:98
+msgid "and wave resistance"
+msgstr "и волновое сопротивление"
+
+#: content/templates/content/product.html:99
+msgid "Om"
+msgstr "Ом"
+
+#: content/templates/content/product.html:103
+msgid ""
+"Optionally, optimization can be made on a coaxial transitions of the "
+"customer or microstrip line with lower permittivity. "
+msgstr ""
+"По желанию, оптимизация может быть произведена на коаксиальные переходы "
+"заказчика или микрополосковую линию с меньшим значением диэлектрической "
+"проницаемости."
+
+#: content/templates/content/product.html:107
+msgid "Estimated price"
+msgstr "Ориентировочная цена"
+
+#: content/templates/content/product.html:120
+msgid "Overall and mounting dimensions"
+msgstr "Габаритно-присоединительные размеры"
+
+#: content/templates/content/product.html:131
+msgid "Design versions"
+msgstr "Варианты исполнения"
+
+#: content/templates/content/product.html:151
+msgid "Actual price may vary."
+msgstr "Реальная цена может отличаться от приведенной на сайте."
+
+#: content/templates/content/product.html:152
+msgid "Topological scheme may vary."
+msgstr ""
+"Топологическая схема устройства может отличаться от изображенной на рисунке."
 
 #: content/templates/content/series.html:7
 msgid "Ferrite microwave components in the series"
@@ -168,7 +246,11 @@ msgstr "Модель"
 #: filebrowser/templates/filebrowser/include/tableheader.html:12
 #: filebrowser/templates/filebrowser/include/tableheader.html:13
 msgid "Type"
-msgstr ""
+msgstr "Тип"
+
+#: content/templates/content/series.html:58
+msgid "Price"
+msgstr "Цена"
 
 #: filebrowser/actions.py:51
 #, python-format
@@ -1369,15 +1451,15 @@ msgstr ""
 msgid "type_instance"
 msgstr ""
 
-#: products/models.py:78 products/models.py:100
+#: products/models.py:78 products/models.py:105
 msgid "Product description"
 msgstr ""
 
-#: products/models.py:90
+#: products/models.py:95
 msgid "product translations"
 msgstr ""
 
-#: products/models.py:98
+#: products/models.py:103
 msgid "product_instance"
 msgstr ""
 

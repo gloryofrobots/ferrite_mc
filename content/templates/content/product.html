@@ -9,9 +9,10 @@
 
 {% block additional_meta %}
 <link rel="stylesheet" href="{% static 'content/css/product.css' %}" type="text/css" media="screen"/>
+
 {% endblock %}
 
-{% block title %} {{category.name|capfirst}}&nbsp;{{series.name}}&nbsp;{{product.name}} {% endblock %}
+{% block title %} {{product.type.long_name|capfirst}}&nbsp;{{series.name}}-{{product.name}} {% endblock %}
 
 {% block left_sidebar_header %} {% trans "Series" %} {{series.name}}  {%endblock%}
 
@@ -25,7 +26,7 @@
 {%block page_content %}
 <div class="product_header">{{product.type.long_name|capfirst}} <br/> {{series.name}}-{{product.name}}</div>
 
-
+<div class="header_line">{% trans "Сharacteristics" %}</div>
 <!-- PRODUCT TABLE -->
 <table class="product_table">
     <thead>
@@ -43,10 +44,10 @@
             {% trans "VSWR"%}
         </th>
         <th colspan="2">
-            {% trans "Temperature (&#176;C)"%} <br/>
+            {% trans "Temperature" %}, &#176;C
         </th>
         <th rowspan="2">
-            {% trans "Max input power(W)"%} <br/>
+            {% trans "Max input power, W"%}
         </th>
     </tr>
     <tr>
@@ -63,34 +64,68 @@
 
     <tbody>
     <tr>
-        <td>{{product.frequency_min}}</td>
-        <td>{{product.frequency_max}}</td>
-        <td>{{product.insertion_losses_min}}</td>
-        <td>{{product.insertion_losses_max}}</td>
-        <td>{{product.inverse_losses_min}}</td>
-        <td>{{product.inverse_losses_max}}</td>
-        <td>{{product.vswr}}</td>
-        <td>{{product.temperature_min}}</td>
-        <td>{{product.temperature_max}}</td>
-        <td>{{product.input_power}}</td>
+        <td>{{product.frequency_min|floatformat}}</td>
+        <td>{{product.frequency_max|floatformat}}</td>
+        <td>{{product.insertion_losses_min|floatformat}}</td>
+        <td>{{product.insertion_losses_max|floatformat}}</td>
+        <td>{{product.inverse_losses_min|floatformat}}</td>
+        <td>{{product.inverse_losses_max|floatformat}}</td>
+        <td>{{product.vswr|floatformat}}</td>
+        <td>{{product.temperature_min|floatformat}}</td>
+        <td>{{product.temperature_max|floatformat}}</td>
+        <td>{{product.input_power|floatformat}}</td>
+
     </tr>
     </tbody>
 </table>
 <!-- END PRODUCT TABLE -->
+<div class="clearthis">&nbsp;</div>
+<div class="header_line">{% trans "Remarks" %}</div>
 
+<div class="product_description">
+    {% if product.description|length > 0 %}
+        {{product.description|safe}}    <br/>
+    {% endif %}
+    <p>{% trans "Direct losses are relative to polycarbonate microstrip line in open space." %}</p>
+
+    <p>{% trans "Geometry and dimensions of mounting camera is not defined" %}.</p>
+
+    <p>{% trans "Device soldering temperature should not exceed the" %} {{product.soldering_temperature|floatformat}}&#176;C.</p>
+
+    <p> {% trans "Peak temperature on the adhesive seams should not exceed the" %}
+        {{product.peak_temperature|floatformat}}&#176;C.</p>
+
+    <p>{% trans "Matching transformers are optimized for " %}
+        {% trans "microstrip line with permittivity " %} ε={{product.permittivity|floatformat}} {% trans "and wave resistance" %}
+        {{product.wave_resistance|floatformat}} {% trans "Om"%}.
+    </p>
+
+    <p>
+        {% trans "Optionally, optimization can be made on a coaxial transitions of the customer or microstrip line with lower permittivity. "%}
+    </p>
+
+    <span class="estimated_price">
+    {% trans "Estimated price"%} {{product.price|floatformat}} &#36;
+    </span><sup><a class="link_note" href="#price-note">*</a></sup>
+</div>
 <!-- PRODUCT DESCRIPTION -->
-<div class="product_description">{{product.description|safe}}</div>
-<!-- END PRODUCT DESCRIPTION-->
 
+
+<!-- END PRODUCT DESCRIPTION-->
+{% if product_images|length > 0 %}
+<div class="clearthis">&nbsp;</div>
+<div class="header_line">{% trans "Overall and mounting dimensions" %}<sup><a class="link_note"
+                                                                              href="#scheme-note">**</a></sup></div>
 
 {% for product_image in product_images %}
 <div class="product_image">
     <img src="{{product_image.image.url}}" class="product_image"/>
 </div>
 {%endfor%}
+{% endif %}
 
 <div class="clearthis">&nbsp;</div>
-
+<div class="header_line">{% trans "Design versions" %}</div>
 <div class="product_type_table_container">
     <table class="product_type_table">
         <tr>
@@ -98,19 +133,20 @@
                 <div class="type_signature">{{series.name}}-{{product.name}}</div>
             </td>
             <td><img src="{{product.type.direct_flow_image.url}}"/></td>
-        </tr>
-
-        {%if product.type.reverse_flow_image.url %}
-        <tr>
+            {%if product.type.reverse_flow_image.url %}
             <td>
-                <div class="type_signature">{{series.name}}-{{product.name}}-1</div>
+                <div class="type_signature type_signature_last">{{series.name}}-{{product.name}}-1</div>
             </td>
             <td><img src="{{product.type.reverse_flow_image.url}}"/></td>
+            {%endif%}
         </tr>
-        {%endif%}
     </table>
 </div>
 <!-- END IMAGE TABLE -->
 
+<ul class="product_notes">
+    <li id="price-note"><sup>*</sup>{% trans "Actual price may vary." %}</li>
+    <li id="scheme-note"><sup>**</sup>{% trans "Topological scheme may vary." %}</li>
+</ul>
 
 {% endblock %}

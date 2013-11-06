@@ -5,19 +5,27 @@
     margin-top:20px;
 
 }
+
 .type_signature{
     font-size:24px;
+    
+}
+
+.type_signature_last{
+    margin-left:50px;
 }
 
 .product_description {
     font-weight:normal;
-    font-size:12px;
+    font-size:16px;
 }
 .product_header {
     color:#000;
     font-weight:bold;
-    font-size:16px;
+    font-size:20px;
     margin-top:10px;
+    text-align: center;
+    width: 100%;
 }
 
 .product_table{
@@ -67,4 +75,26 @@
 }
 .product_type_table_container {
     text-align:center;
+}
+.header_line{
+    font-weight:normal;
+    font-size:18px;
+    width:100%;
+    margin-top:20px;
+    text-align:center;
+}
+.link_note{
+    text-decoration:none;
+    font-size:18px;
+    color:black;
+}
+.product_notes {
+    font-style:italic;
+    font-size:12px;
+    margin-top:20px;
+}
+.estimated_price {
+    font-size:16px;
+    color:black;
+    font-weight:bold;
 }

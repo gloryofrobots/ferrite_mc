@@ -54,6 +54,9 @@
                     <th rowspan="2">
                      {% trans "VSWR"%} <br/>
                     </th>
+                     <th rowspan="2">
+                     {% trans "Price"%}, &#36; <br/>
+                    </th>
                 </tr>
                 <tr>
                     <th>{% trans "min"%}</th>
@@ -71,13 +74,14 @@
                     <tr>
                         <td><a href ="{% url 'show_product' product_id=product.id %}"> {{product.name}} </a></td>
                          <td> {{product.type.name|capfirst}} </td>
-                        <td>{{product.frequency_min}}</td>
-                        <td>{{product.frequency_max}}</td>
-                        <td>{{product.insertion_losses_min}}</td>
-                        <td>{{product.insertion_losses_max}}</td>
-                        <td>{{product.inverse_losses_min}}</td>
-                        <td>{{product.inverse_losses_max}}</td>
-                        <td>{{product.vswr}}</td>
+                        <td>{{product.frequency_min|floatformat}}</td>
+                        <td>{{product.frequency_max|floatformat}}</td>
+                        <td>{{product.insertion_losses_min|floatformat}}</td>
+                        <td>{{product.insertion_losses_max|floatformat}}</td>
+                        <td>{{product.inverse_losses_min|floatformat}}</td>
+                        <td>{{product.inverse_losses_max|floatformat}}</td>
+                        <td>{{product.vswr|floatformat}}</td>
+                        <td>{{product.price|floatformat}}</td>
                     </tr>
                 {%endfor%}
             </tbody>

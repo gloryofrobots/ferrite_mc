@@ -17,7 +17,7 @@ urlpatterns = patterns('',
                         {'document_root': settings.MEDIA_ROOT}),
 
 
-
+                       (r'^products/', include('products.urls')), # grappelli URLS
                        (r'^grappelli/', include('grappelli.urls')), # grappelli URLS
                        (r'^admin/', include(admin.site.urls)), # admin site
                        url(r'^admin/filebrowser/', include(site.urls)),

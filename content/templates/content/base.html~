@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'content/css/prettyPhoto.css' %}" type="text/css" media="screen"/>
     <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.js' %}"></script>
      
-    <script type="text/javascript" charset="utf-8">
+<script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
             $(".page_menu [href]").each(function() {
                 if (this.href == window.location.href) {
@@ -93,11 +93,13 @@
 
     <div id="page_footer">
         <div id="powered_by">
-           {% trans "For questions or suggestions, please contact us by email" %}
-            <span class="footer_email">mwfcomponent@gmail.com</span>
+           {% trans "Ferrite microwave components" %}
         </div>
+
     </div>
+
     <!-- End of Page Footer -->
+
 </div>
 
 </body>

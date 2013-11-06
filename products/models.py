@@ -83,9 +83,14 @@ class Product(MothertongueModelTranslate):
     inverse_losses_max = models.FloatField()
     inverse_losses_min = models.FloatField()
     vswr = models.FloatField()
-    temperature_max = models.IntegerField()
-    temperature_min = models.IntegerField()
+    temperature_max = models.FloatField()
+    temperature_min = models.FloatField()
     input_power = models.FloatField()
+    soldering_temperature = models.FloatField()
+    peak_temperature = models.FloatField()
+    permittivity = models.FloatField()
+    wave_resistance = models.FloatField()
+    price = models.FloatField()
 
     translations = models.ManyToManyField('ProductTranslation', blank=True, verbose_name=_('product translations'))
     translation_set = 'producttranslation_set'

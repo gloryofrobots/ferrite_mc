@@ -54,12 +54,17 @@ p {
 	overflow: hidden;
 }
 
-#page_header a {
+.lang_link {
 	color: #fff;
 	text-decoration: underline;
 }
 
-#page_header a:hover {
+.lang_link_active{
+    color: #ccc;
+    text-decoration: none;
+}
+
+#page_header .lang_link:hover {
 	color: #e1e1e1;
 }
 
@@ -161,6 +166,18 @@ p {
 	float:right;
 }
 
+.page_menu .active_menu_link{
+    color:#ccc;
+    text-decoration: none;
+    cursor:default;
+}
+
+.page_menu .active_menu_link:hover{
+    color:#ccc;
+    text-decoration: none;
+    cursor:default;
+}
+
 .page_menu ul {
 	/*width: 100%;
 	height: 21px;*/
@@ -193,7 +210,7 @@ p {
 	padding-top: 3px;
 	display: block;
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .page_menu a:hover {
@@ -300,7 +317,7 @@ p {
 
 	width: 805px;
 	min-height:100%;
-	text-align: center;
+
 	float: right;
 	/*border-color: #9e9ec3;
 	border-width: 1px 1px 1px;
@@ -328,6 +345,7 @@ p {
 }
 
 #powered_by {
+    color:#fff;
 	padding-top: 17px;
 	float: right;
 	height: 30px;
@@ -335,3 +353,7 @@ p {
 	margin-right:30px;
 }
 
+.footer_email{
+    font-weight:bold;
+    font-size:16px;
+}

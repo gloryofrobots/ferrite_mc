@@ -47,9 +47,11 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = (ProductTranslationInline, ProductImageInline)
     fields = ['series', 'type', 'name', 'description',
               'frequency_min', 'frequency_max', 'insertion_losses_min', 'insertion_losses_max',
-              'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max', 'input_power']
+              'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max',
+              'input_power', 'soldering_temperature', 'peak_temperature', 'permittivity', 'wave_resistance', 'price']
+
     list_display = ( 'name', 'series', 'type', 'frequency_min', 'frequency_max')
-    list_filter = ('series', 'type', 'frequency_min', 'frequency_max')
+    list_filter = ( 'name', 'series', 'type', 'frequency_min', 'frequency_max')
 
 
 class TypeTranslationInline(admin.StackedInline):
@@ -99,7 +101,8 @@ class SeriesProductInline(admin.StackedInline):
     extra = 1
     fields = ['type', 'name', 'description',
               'frequency_min', 'frequency_max', 'insertion_losses_min', 'insertion_losses_max',
-              'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max', 'input_power']
+              'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max',
+              'input_power', 'soldering_temperature', 'peak_temperature', 'permittivity', 'wave_resistance', 'price']
 
 
 class SeriesAdmin(admin.ModelAdmin):
