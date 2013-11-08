@@ -64,13 +64,13 @@ class TypeTranslationInline(admin.StackedInline):
             'fields': ['language', ]
         }),
         ('Translation', {
-            'fields': ['name', 'long_name'],
+            'fields': ['name', 'long_name','magic_attribute'],
         }),
     )
 
 
 class TypeAdmin(admin.ModelAdmin):
-    fields = ['name', 'long_name', 'direct_flow_image', 'reverse_flow_image']
+    fields = ['name', 'long_name','magic_attribute', 'direct_flow_image', 'reverse_flow_image']
     inlines = (TypeTranslationInline,)
 
 

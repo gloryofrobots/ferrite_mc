@@ -18,6 +18,7 @@
 .product_description {
     font-weight:normal;
     font-size:16px;
+    line-height:150%;
 }
 .product_header {
     color:#000;
@@ -75,6 +76,7 @@
 }
 .product_type_table_container {
     text-align:center;
+    margin-top:50px;
 }
 .header_line{
     font-weight:normal;
@@ -91,10 +93,20 @@
 .product_notes {
     font-style:italic;
     font-size:12px;
-    margin-top:20px;
+    margin-top:70px;
 }
 .estimated_price {
     font-size:16px;
     color:black;
     font-weight:bold;
+}
+.figure_title{
+    font-weight:normal;
+    font-size:14px;
+    width:100%;
+    margin-top:20px;
+}
+
+.type_image {
+    width:160px;
 }

@@ -8,6 +8,30 @@ from mothertongue.models import MothertongueModelTranslate
 from tinymce import models as tinymce_models
 
 
+class Chunk(MothertongueModelTranslate):
+    name = models.CharField(_('name'), max_length=200, help_text=_('Chunk name'))
+    content = tinymce_models.HTMLField(_('content'), blank=True, help_text=_('Chunk content'))
+    translations = models.ManyToManyField('ChunkTranslation', blank=True, verbose_name=_('translations'))
+    translation_set = 'chunktranslation_set'
+    translated_fields = ['content']
+
+    def __unicode__(self):
+        return u'%s' % self.name
+
+# chunks translations model
+class ChunkTranslation(models.Model):
+    chunk_instance = models.ForeignKey('Chunk', verbose_name=_('chunk'))
+    language = models.CharField(max_length=5, choices=settings.LANGUAGES[1:], default=settings.LANGUAGES[0][0])
+    content = models.TextField(_('content'), blank=True, help_text=_('Chunk content'))
+
+    class Meta(object):
+        # ensures we can only have on translation for each language for each page
+        unique_together = (('chunk_instance', 'language'),)
+
+    def __unicode__(self):
+        return u'%s%s' % (self.language,self.name)
+
+
 class FrontPage(MothertongueModelTranslate):
     title = models.CharField(_('title'), max_length=200, help_text=_('Page title'))
     content = tinymce_models.HTMLField(_('content'), blank=True, help_text=_('Page content'))

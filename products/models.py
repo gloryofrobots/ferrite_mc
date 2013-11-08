@@ -43,6 +43,7 @@ class Series(models.Model):
 class Type(MothertongueModelTranslate):
     name = models.CharField(max_length=255, help_text=_('Product type name'))
     long_name = models.CharField(max_length=255, help_text=_('Product type long name'))
+    magic_attribute = models.CharField(max_length=255, help_text=_('Product magic attribute name'))
     direct_flow_image = FileBrowseField("Image", max_length=200, directory="images/", extensions=[".jpg", ".jpeg", ".png"],
                             blank=True, null=True, help_text=_('Direct flow image'))
     reverse_flow_image = FileBrowseField("Image", max_length=200, directory="images/",
@@ -51,7 +52,7 @@ class Type(MothertongueModelTranslate):
 
     translations = models.ManyToManyField('TypeTranslation', blank=True, verbose_name=_('type translations'))
     translation_set = 'typetranslation_set'
-    translated_fields = ['name','long_name']
+    translated_fields = ['name','long_name','magic_attribute']
 
     def __unicode__(self):
         return u'%s' % (self.name)
@@ -61,6 +62,7 @@ class TypeTranslation(models.Model):
     type_instance = models.ForeignKey('Type', verbose_name=_('type_instance'))
     language = models.CharField(max_length=5, choices=settings.LANGUAGES[1:], default=settings.LANGUAGES[0][0])
     name = models.CharField(max_length=255, help_text=_('Product type name'))
+    magic_attribute = models.CharField(max_length=255, help_text=_('Product magic attribute name'))
     long_name = models.CharField(max_length=255, help_text=_('Product type long name'))
 
     class Meta(object):
@@ -86,6 +88,7 @@ class Product(MothertongueModelTranslate):
     temperature_max = models.FloatField()
     temperature_min = models.FloatField()
     input_power = models.FloatField()
+    reflected_power = models.FloatField()
     soldering_temperature = models.FloatField()
     peak_temperature = models.FloatField()
     permittivity = models.FloatField()

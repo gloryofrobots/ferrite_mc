@@ -26,7 +26,10 @@
 {%block page_content %}
 <div class="product_header">{{product.type.long_name|capfirst}} <br/> {{series.name}}-{{product.name}}</div>
 
-<div class="header_line">{% trans "Сharacteristics" %}</div>
+<div class="header_line">{% trans "Technical conditions" %}</div>
+<div class="product_description">
+{% trans "The electromagnetic parameters of the devices at acceptance and delivery under normal environmental conditions must conform to table:" %}
+</div>
 <!-- PRODUCT TABLE -->
 <table class="product_table">
     <thead>
@@ -38,7 +41,7 @@
             {% trans "Insertion losses, dB"%}
         </th>
         <th colspan="2">
-            {% trans "Inverse losses, dB"%}
+            {{product.type.magic_attribute|capfirst}},&nbsp;{% trans "dB"%}
         </th>
         <th rowspan="2">
             {% trans "VSWR"%}
@@ -80,73 +83,89 @@
 </table>
 <!-- END PRODUCT TABLE -->
 <div class="clearthis">&nbsp;</div>
-<div class="header_line">{% trans "Remarks" %}</div>
 
 <div class="product_description">
+    <ol>
+        <li>
+            {% trans "Devices able to operate in the the working temperature range" %}.
+        </li>
+         <li>
+            {% trans "Reflected continuous power absorbed by the load is not more than" %}
+             {{product.reflected_power|floatformat}} {% trans "watt" %}.
+        </li>
+        <li>
+            {% trans "Direct losses given relative to polycarbonate microstrip line with a characteristic impedance " %}
+             {{product.wave_resistance|floatformat}} {% trans "ohms in open space"%}.
+        </li>
+        <li>
+            {% trans "Geometry and dimensions of mounting camera is not defined" %}.
+        </li>
+         <li>
+           {% trans "Device soldering temperature should not exceed the" %} {{product.soldering_temperature|floatformat}}&#176;C.
+        </li>
+         <li> {% trans "Peak temperature on the adhesive seams should not exceed the" %}
+                {{product.peak_temperature|floatformat}}&#176;C.
+         </li>
+         <li>
+            {% trans "Matching transformers are optimized for " %}
+            {% trans "microstrip line with permittivity " %} ε={{product.permittivity|floatformat}}.
+        </li>
+
+        <li>
+            {% trans "Optionally, optimization can be made on a coaxial transitions of the customer or microstrip line with lower permittivity. "%}
+        </li>
+    </ol>
+
     {% if product.description|length > 0 %}
-        {{product.description|safe}}    <br/>
+        {{product.description|safe}} <br/>
     {% endif %}
-    <p>{% trans "Direct losses are relative to polycarbonate microstrip line in open space." %}</p>
-
-    <p>{% trans "Geometry and dimensions of mounting camera is not defined" %}.</p>
-
-    <p>{% trans "Device soldering temperature should not exceed the" %} {{product.soldering_temperature|floatformat}}&#176;C.</p>
-
-    <p> {% trans "Peak temperature on the adhesive seams should not exceed the" %}
-        {{product.peak_temperature|floatformat}}&#176;C.</p>
-
-    <p>{% trans "Matching transformers are optimized for " %}
-        {% trans "microstrip line with permittivity " %} ε={{product.permittivity|floatformat}} {% trans "and wave resistance" %}
-        {{product.wave_resistance|floatformat}} {% trans "Om"%}.
-    </p>
-
-    <p>
-        {% trans "Optionally, optimization can be made on a coaxial transitions of the customer or microstrip line with lower permittivity. "%}
-    </p>
 
     <span class="estimated_price">
     {% trans "Estimated price"%} {{product.price|floatformat}} &#36;
     </span><sup><a class="link_note" href="#price-note">*</a></sup>
+    <p>
+      {% trans "If you have technical or commercial questions, contact us by email" %}
+            <span class="footer_email">mwfcomponent@gmail.com</span>
+    </p>
 </div>
 <!-- PRODUCT DESCRIPTION -->
 
-
+<div class="clearthis">&nbsp;</div>
 <!-- END PRODUCT DESCRIPTION-->
 {% if product_images|length > 0 %}
-<div class="clearthis">&nbsp;</div>
-<div class="header_line">{% trans "Overall and mounting dimensions" %}<sup><a class="link_note"
-                                                                              href="#scheme-note">**</a></sup></div>
-
 {% for product_image in product_images %}
 <div class="product_image">
     <img src="{{product_image.image.url}}" class="product_image"/>
 </div>
 {%endfor%}
+<div class="clearthis">&nbsp;</div>
+<div class="figure_title">{% trans "Figure" %}&nbsp;1.&nbsp;{% trans "Overall and mounting dimensions" %}.</div>
 {% endif %}
 
 <div class="clearthis">&nbsp;</div>
-<div class="header_line">{% trans "Design versions" %}</div>
 <div class="product_type_table_container">
     <table class="product_type_table">
         <tr>
             <td>
                 <div class="type_signature">{{series.name}}-{{product.name}}</div>
             </td>
-            <td><img src="{{product.type.direct_flow_image.url}}"/></td>
+            <td><img class="type_image" src="{{product.type.direct_flow_image.url}}"/></td>
             {%if product.type.reverse_flow_image.url %}
             <td>
                 <div class="type_signature type_signature_last">{{series.name}}-{{product.name}}-1</div>
             </td>
-            <td><img src="{{product.type.reverse_flow_image.url}}"/></td>
+            <td><img class="type_image" src="{{product.type.reverse_flow_image.url}}"/></td>
             {%endif%}
         </tr>
     </table>
 </div>
+<div class="clearthis">&nbsp;</div>
+<div class="figure_title">{% trans "Figure" %}&nbsp;2.&nbsp;{% trans "Design versions" %}.</div>
 <!-- END IMAGE TABLE -->
 
 <ul class="product_notes">
-    <li id="price-note"><sup>*</sup>{% trans "Actual price may vary." %}</li>
-    <li id="scheme-note"><sup>**</sup>{% trans "Topological scheme may vary." %}</li>
+    <li id="price-note"><sup>*</sup>{% trans "The actual price depends on the number of products and may differ from that given on the site." %}
+    </li>
 </ul>
 
 {% endblock %}
