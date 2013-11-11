@@ -234,9 +234,8 @@ img {
 
 /* Left Sidebar : Categories */
 
-#categories {
-    height:300px;
-	margin-bottom: 1px;
+.categories {
+	margin-bottom: 5px;
 	padding: 1px 1px 1px 0px;
 	/*border-color: #1F202B;
 	border-width: 0px 1px 1px 1px;
@@ -245,7 +244,7 @@ img {
 	font-weight: bold;
 }
 
-#categories_header {
+.categories_header {
 	margin-bottom: 2px;
 	width: 167px;
 	height: 20px;
@@ -253,7 +252,7 @@ img {
 	overflow: hidden;
 }
 
-#categories_header h2 {
+.categories_header h2 {
 	margin-top: 3px;
 	margin-left: 5px;
 	color: #000;
@@ -266,7 +265,7 @@ img {
 	list-style-type: none;
 }
 
-#categories li {
+.categories li {
 	width: 160px;
 	height: 21px;
 	list-style-type: none;
@@ -275,11 +274,11 @@ img {
 	float: left;
 }
 
-#categories li.last {
+.categories li.last {
 	border: none;
 }
 
-#categories li a {
+.categories li a {
 	margin-top: 4px;
 	margin-left: 6px;
 	display: block;
@@ -287,7 +286,7 @@ img {
 	text-decoration: none;
 }
 
-#categories li a:hover {
+.categories li a:hover {
 	color: #56567c;
 }
 

@@ -61,3 +61,18 @@ input[type=text]
     padding-left:10px;
     width: 191px;
 }
+.series_types{
+    color: #ccc;
+    font-size:16px;
+}
+
+.series_type_group{
+    color: #1F202B;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.series_type_group:hover{
+    color: #75759c;
+}

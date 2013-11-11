@@ -4,18 +4,18 @@
     <div id="left_sidebar">
             <!-- Start of Categories Box -->
 
-        <div id="categories">
-            <div id="categories_header">
+        <div class="categories">
+            <div class="categories_header">
                 <h2>{% block left_sidebar_header %} {%endblock%}</h2>
             </div>
 
-            <ul>
+            <ul class="categories_list">
                 {% block left_sidebar_items %} {%endblock%}
             </ul>
 
             <div class="clearthis">&nbsp;</div>
         </div>
-
+        {% block additional_left_sidebar %} {%endblock%}
             <!-- End of Categories Box -->
     </div>
 

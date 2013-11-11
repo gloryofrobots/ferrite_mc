@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'content/css/prettyPhoto.css' %}" type="text/css" media="screen"/>
     <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.js' %}"></script>
      
-<script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
             $(".page_menu [href]").each(function() {
                 if (this.href == window.location.href) {
@@ -60,7 +60,7 @@
 
 
         <div id="page_heading">
-            <h1><a class="main_page_header_link" href="{% url 'main' %}"> {% trans "Ferrite microwave components" %}</a> </h1>
+            <h1><a class="main_page_header_link" href="{% url 'main' %}"> {% trans "Ferrite microstrip components" %}</a> </h1>
         </div>
 
 
@@ -92,14 +92,14 @@
     <!-- Start of Page Footer -->
 
     <div id="page_footer">
+        <div id="copyright"> Copyright©  mwfcomponent.com</div>
         <div id="powered_by">
-           {% trans "Ferrite microwave components" %}
+           {% trans "Our contact email" %}
+            <span class="footer_email">mwfcomponent@gmail.com</span>
+
         </div>
-
     </div>
-
     <!-- End of Page Footer -->
-
 </div>
 
 </body>

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="746d5d3c-a03b-4bc4-a1f9-9892ed709c9c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/uploads/images/products/fo1/FO1-1112.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/static/content/js/product.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/static/content/js/series.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/admin.py" afterPath="$PROJECT_DIR$/content/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/admin.py" afterPath="$PROJECT_DIR$/products/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/templates/content/base.html" afterPath="$PROJECT_DIR$/content/templates/content/base.html" />
@@ -15,8 +16,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/static/content/css/product.css" afterPath="$PROJECT_DIR$/content/static/content/css/product.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/content/css/product.css" afterPath="$PROJECT_DIR$/static/content/css/product.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/templates/content/product.html" afterPath="$PROJECT_DIR$/content/templates/content/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fmc/urls.py" afterPath="$PROJECT_DIR$/fmc/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/views.py" afterPath="$PROJECT_DIR$/products/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/static/content/css/series.css" afterPath="$PROJECT_DIR$/content/static/content/css/series.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/content/css/series.css" afterPath="$PROJECT_DIR$/static/content/css/series.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/templates/content/series.html" afterPath="$PROJECT_DIR$/content/templates/content/series.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/templates/content/two_column_page.html" afterPath="$PROJECT_DIR$/content/templates/content/two_column_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/views.py" afterPath="$PROJECT_DIR$/content/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fmc.iws" />
@@ -43,16 +47,61 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/templates/content/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="102" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1680">
+            <state line="62" column="101" selection-start="2266" selection-end="2266" vertical-scroll-proportion="-3.125" vertical-offset="855" max-vertical-offset="1680">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="product.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/templates/content/product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="13" selection-start="2909" selection-end="4265" vertical-scroll-proportion="0.7077922" vertical-offset="1507" max-vertical-offset="2640">
+            <state line="14" column="69" selection-start="489" selection-end="489" vertical-scroll-proportion="-6.875" vertical-offset="45" max-vertical-offset="2625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="series.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/static/content/js/series.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/static/content/js/product.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="3" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation_tag.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/templates/content/navigation_tag.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="109" selection-start="50" selection-end="151" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/content/static/content/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="237" column="20" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.1536232" vertical-offset="3502" max-vertical-offset="5490">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/static/content/css/product.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="121" column="20" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0" vertical-offset="1590" max-vertical-offset="1935">
               <folding />
             </state>
           </provider>
@@ -61,45 +110,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/products/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="3218" selection-end="3218" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="1950">
-              <folding>
-                <marker date="1383752794820" expanded="true" signature="1509:2528" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/static/content/css/product.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="20" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.0" vertical-offset="1195" max-vertical-offset="1755">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="25" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1200">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="25" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="1080">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/static/content/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="5505">
+            <state line="53" column="30" selection-start="2366" selection-end="2392" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1995">
               <folding />
             </state>
           </provider>
@@ -108,25 +119,16 @@
       <file leaf-file-name="django.po" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="271" column="12" selection-start="8126" selection-end="8126" vertical-scroll-proportion="0.0" vertical-offset="3856" max-vertical-offset="23115">
+            <state line="101" column="28" selection-start="2225" selection-end="2225" vertical-scroll-proportion="-1.5769231" vertical-offset="1433" max-vertical-offset="23415">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/admin.py">
+      <file leaf-file-name="series.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content/templates/content/series.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="51" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1830">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fmc/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="16" selection-start="4109" selection-end="4109" vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="3240">
+            <state line="24" column="86" selection-start="1230" selection-end="1313" vertical-scroll-proportion="-5.625" vertical-offset="225" max-vertical-offset="1650">
               <folding />
             </state>
           </provider>
@@ -150,22 +152,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/content/templates/content/series.html" />
-        <option value="$PROJECT_DIR$/content/urls.py" />
-        <option value="$PROJECT_DIR$/fmc/urls.py" />
-        <option value="$PROJECT_DIR$/products/urls.py" />
-        <option value="$PROJECT_DIR$/content/templates/content/dummy.html" />
-        <option value="$PROJECT_DIR$/products/views.py" />
-        <option value="$PROJECT_DIR$/content/static/content/css/index.css" />
-        <option value="$PROJECT_DIR$/products/models.py" />
-        <option value="$PROJECT_DIR$/products/admin.py" />
-        <option value="$PROJECT_DIR$/content/templates/content/base.html" />
-        <option value="$PROJECT_DIR$/content/templates/content/product.html" />
-        <option value="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" />
-        <option value="$PROJECT_DIR$/content/static/content/css/product.css" />
+        <option value="$PROJECT_DIR$/fmc/settings.py" />
         <option value="$PROJECT_DIR$/content/models.py" />
         <option value="$PROJECT_DIR$/content/admin.py" />
-        <option value="$PROJECT_DIR$/fmc/settings.py" />
+        <option value="$PROJECT_DIR$/products/models.py" />
+        <option value="$PROJECT_DIR$/products/admin.py" />
+        <option value="$PROJECT_DIR$/content/static/content/css/series.css" />
+        <option value="$PROJECT_DIR$/content/static/content/js/series.js" />
+        <option value="$PROJECT_DIR$/content/templates/content/series.html" />
+        <option value="$PROJECT_DIR$/content/views.py" />
+        <option value="$PROJECT_DIR$/content/templates/content/two_column_page.html" />
+        <option value="$PROJECT_DIR$/content/static/content/css/product.css" />
+        <option value="$PROJECT_DIR$/content/templates/content/base.html" />
+        <option value="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" />
+        <option value="$PROJECT_DIR$/content/static/content/js/product.js" />
+        <option value="$PROJECT_DIR$/content/templates/content/product.html" />
+        <option value="$PROJECT_DIR$/content/static/content/css/index.css" />
       </list>
     </option>
   </component>
@@ -199,6 +201,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,38 +217,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,34 +253,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LC_MESSAGES" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grappelli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fmc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,6 +313,32 @@
               <option name="myItemId" value="content" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fmc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fmc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -399,7 +368,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -597,10 +565,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23859386" sideWeight="0.67235494" order="0" side_tool="false" content_ui="combo" />
@@ -653,106 +621,112 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/products/urls.py">
+    <entry file="file://$PROJECT_DIR$/content/templates/content/frontpage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="75" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fmc/urls.py">
+    <entry file="file://$PROJECT_DIR$/content/static/content/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="56" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/templates/content/dummy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="32" selection-start="1259" selection-end="1259" vertical-scroll-proportion="-13.625" vertical-offset="213" max-vertical-offset="765" />
+        <state line="10" column="5" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="705">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="33" selection-start="1119" selection-end="1130" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1230" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="12" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="810">
+        <state line="102" column="60" selection-start="3669" selection-end="3669" vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="2085">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/static/content/css/index.css">
+    <entry file="file://$PROJECT_DIR$/content/templates/content/page_with_series_left_sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="5505">
+        <state line="7" column="61" selection-start="229" selection-end="266" vertical-scroll-proportion="0.3271028" vertical-offset="0" max-vertical-offset="321">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/models.py">
+    <entry file="file://$PROJECT_DIR$/content/templates/content/two_column_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="3218" selection-end="3218" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="1950">
-          <folding>
-            <marker date="1383752794820" expanded="true" signature="1509:2528" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="51" selection-start="2277" selection-end="2277" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1830">
+        <state line="11" column="39" selection-start="310" selection-end="334" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/templates/content/base.html">
+    <entry file="file://$PROJECT_DIR$/content/templatetags/frontpage_navigation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="102" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="271" column="12" selection-start="8126" selection-end="8126" vertical-scroll-proportion="0.0" vertical-offset="3856" max-vertical-offset="23115">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/static/content/css/product.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="20" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.0" vertical-offset="1195" max-vertical-offset="1755">
+        <state line="121" column="20" selection-start="2108" selection-end="2108" vertical-scroll-proportion="0.0" vertical-offset="1590" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/models.py">
+    <entry file="file://$PROJECT_DIR$/content/templates/content/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="25" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1200">
+        <state line="62" column="101" selection-start="2266" selection-end="2266" vertical-scroll-proportion="-3.125" vertical-offset="855" max-vertical-offset="1680">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/admin.py">
+    <entry file="file://$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="25" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="1080">
+        <state line="101" column="28" selection-start="2225" selection-end="2225" vertical-scroll-proportion="-1.5769231" vertical-offset="1433" max-vertical-offset="23415">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fmc/settings.py">
+    <entry file="file://$PROJECT_DIR$/content/static/content/js/series.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="16" selection-start="4109" selection-end="4109" vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="3240">
+        <state line="17" column="0" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/static/content/js/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="3" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/templates/content/series.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="86" selection-start="1230" selection-end="1313" vertical-scroll-proportion="-5.625" vertical-offset="225" max-vertical-offset="1650">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/templates/content/product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="13" selection-start="2909" selection-end="4265" vertical-scroll-proportion="0.7077922" vertical-offset="1507" max-vertical-offset="2640">
+        <state line="14" column="69" selection-start="489" selection-end="489" vertical-scroll-proportion="-6.875" vertical-offset="45" max-vertical-offset="2625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="30" selection-start="2366" selection-end="2392" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/templates/content/navigation_tag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="109" selection-start="50" selection-end="151" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/static/content/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="20" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.1536232" vertical-offset="3502" max-vertical-offset="5490">
           <folding />
         </state>
       </provider>

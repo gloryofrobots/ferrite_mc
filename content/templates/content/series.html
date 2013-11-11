@@ -4,7 +4,11 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block pre_meta %}
-      <meta name="description" content="{% trans 'Ferrite microwave components in the series' %} {{series.name}}. {% trans 'Products comparison. Custom manufacturing.' %} " />
+          <meta name="description"
+            content="{{chunks.series_description}}" />
+        <meta name="keywords"
+            content="{{chunks.series_keywords}}" />
+
 {% endblock %}
 
 {% block title %} {{category.name|capfirst}}&nbsp;{{series.name}} {% endblock %}
@@ -18,23 +22,33 @@
     <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.russian.js' %}"></script>
     <script type="text/javascript" language="javascript" src="{% static 'content/datatables/js/jquery.dataTables.commasort.js' %}"></script>
 
-<script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            var code = "{{LANGUAGE_CODE}}";
-            var options = {"iDisplayLength": 100, "iDisplayStart": 10}
-            if(code == "ru") {
-                options["oLanguage"] = russian_translate;
-            }
+    <script type="text/javascript" src="{% static 'content/js/series.js' %}"></script>
 
-            var oTable = $('#series_products').dataTable(options);
-            oTable.fnSort( [ [2,'asc'] ] );
-        } );
-    </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var code = "{{LANGUAGE_CODE}}";
+        var options = {"iDisplayLength": 100, "iDisplayStart": 10}
+        if(code == "ru") {
+            options["oLanguage"] = russian_translate;
+        }
+        gSeriesTable.init('series_products', options);
+        gSeriesTable.sort([ [2,'asc'] ]);
+    } );
+</script>
 {% endblock %}
 
 
 {%block page_content %}
         <div id="series_products_header">{% trans "Series" %}&nbsp;{{series.name}}</div>
+        {%if types|length > 1 %}
+        <div id="series_types">
+                <span class="series_type_group" onclick="reset_filter_and_draw()">{% trans "All" %}</span>({{total_count}})
+
+            {% for type_info in types %}
+                                &nbsp;<span class="series_type_group" onclick="filter_by_type('{{type_info.type.name}}')">{{type_info.type.name|capfirst}}</span>({{type_info.count}})
+            {% endfor %}
+        </div><br />
+        {% endif %}
         <table class="series_products" id="series_products">
             <thead>
                 <tr>

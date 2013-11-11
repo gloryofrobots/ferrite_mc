@@ -4,26 +4,54 @@
 
 {% block pre_meta %}
 <meta name="description"
-      content="{% trans 'description and characteristics of ferrite microwave component' %} {{product.name}}. {% trans 'Product custom manufacturing.' %} "/>
+      content="{{chunks.product_description}}"/>
+<meta name="keywords"
+            content="{{chunks.product_keywords}}" />
 {% endblock %}
 
 {% block additional_meta %}
-<link rel="stylesheet" href="{% static 'content/css/product.css' %}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="{% static 'content/css/product.css' %}" type="text/css" media="screen"/>
 
+    <script type="text/javascript" src="{% static 'content/js/product.js' %}"></script>
 {% endblock %}
 
 {% block title %} {{product.type.long_name|capfirst}}&nbsp;{{series.name}}-{{product.name}} {% endblock %}
 
+
+<!-- SIDEBAR -->
 {% block left_sidebar_header %} {% trans "Series" %} {{series.name}}  {%endblock%}
 
 {% block left_sidebar_items %}
-{% for other_product in other_products %}
-<li><a href="{% url 'show_product' product_id=other_product.id %}">{{other_product.name}}&nbsp;({{other_product.type.name}})</a>
-</li>
-{%endfor%}
+    {% for other_product in other_products %}
+    <li><a href="{% url 'show_product' product_id=other_product.id %}">{{other_product.name}}&nbsp;({{other_product.type.name}})</a>
+    </li>
+    {%endfor%}
 {%endblock%}
 
+{% block additional_left_sidebar %}
+ <div class="categories">
+    <div class="categories_header">
+        <h2>{% trans "Series" %}:</h2>
+    </div>
+
+    <ul  class="categories_list">
+       {% for sister in other_series %}
+         <li><a href="{%url 'show_series' series_id=sister.id %}">{{sister.name}}</a> </li>
+       {%endfor%}
+    </ul>
+
+    <div class="clearthis">&nbsp;</div>
+</div>
+{%endblock%}
+
+<!-- END SIDEBAR -->
+
+<!-- CONTENT -->
 {%block page_content %}
+<div class="product_breadcrumbs">
+    <a href="{% url 'show_category'  category_id=category.id %}">{{category.name|capfirst}}</a>/<a href="{% url 'show_series'  series_id=series.id %}">{{series.name|capfirst}}</a>/<span>{{product.name|capfirst}}</span>
+ </div>
+
 <div class="product_header">{{product.type.long_name|capfirst}} <br/> {{series.name}}-{{product.name}}</div>
 
 <div class="header_line">{% trans "Technical conditions" %}</div>
@@ -38,10 +66,10 @@
             {% trans "Frequency, GHz"%}
         </th>
         <th colspan="2">
-            {% trans "Insertion losses, dB"%}
+            {{product.type.insertion_losses_alias|capfirst}},&nbsp;{% trans "dB"%}
         </th>
         <th colspan="2">
-            {{product.type.magic_attribute|capfirst}},&nbsp;{% trans "dB"%}
+            {{product.type.inverse_losses_alias|capfirst}},&nbsp;{% trans "dB"%}
         </th>
         <th rowspan="2">
             {% trans "VSWR"%}
@@ -77,7 +105,6 @@
         <td>{{product.temperature_min|floatformat}}</td>
         <td>{{product.temperature_max|floatformat}}</td>
         <td>{{product.input_power|floatformat}}</td>
-
     </tr>
     </tbody>
 </table>
@@ -85,36 +112,7 @@
 <div class="clearthis">&nbsp;</div>
 
 <div class="product_description">
-    <ol>
-        <li>
-            {% trans "Devices able to operate in the the working temperature range" %}.
-        </li>
-         <li>
-            {% trans "Reflected continuous power absorbed by the load is not more than" %}
-             {{product.reflected_power|floatformat}} {% trans "watt" %}.
-        </li>
-        <li>
-            {% trans "Direct losses given relative to polycarbonate microstrip line with a characteristic impedance " %}
-             {{product.wave_resistance|floatformat}} {% trans "ohms in open space"%}.
-        </li>
-        <li>
-            {% trans "Geometry and dimensions of mounting camera is not defined" %}.
-        </li>
-         <li>
-           {% trans "Device soldering temperature should not exceed the" %} {{product.soldering_temperature|floatformat}}&#176;C.
-        </li>
-         <li> {% trans "Peak temperature on the adhesive seams should not exceed the" %}
-                {{product.peak_temperature|floatformat}}&#176;C.
-         </li>
-         <li>
-            {% trans "Matching transformers are optimized for " %}
-            {% trans "microstrip line with permittivity " %} ε={{product.permittivity|floatformat}}.
-        </li>
-
-        <li>
-            {% trans "Optionally, optimization can be made on a coaxial transitions of the customer or microstrip line with lower permittivity. "%}
-        </li>
-    </ol>
+    {{chunks.product_technical_conditions}}
 
     {% if product.description|length > 0 %}
         {{product.description|safe}} <br/>
@@ -124,8 +122,7 @@
     {% trans "Estimated price"%} {{product.price|floatformat}} &#36;
     </span><sup><a class="link_note" href="#price-note">*</a></sup>
     <p>
-      {% trans "If you have technical or commercial questions, contact us by email" %}
-            <span class="footer_email">mwfcomponent@gmail.com</span>
+      {{chunks.product_offer_proposition}}
     </p>
 </div>
 <!-- PRODUCT DESCRIPTION -->
@@ -169,3 +166,5 @@
 </ul>
 
 {% endblock %}
+
+<!-- END CONTENT -->

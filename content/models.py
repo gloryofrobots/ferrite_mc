@@ -10,7 +10,7 @@ from tinymce import models as tinymce_models
 
 class Chunk(MothertongueModelTranslate):
     name = models.CharField(_('name'), max_length=200, help_text=_('Chunk name'))
-    content = tinymce_models.HTMLField(_('content'), blank=True, help_text=_('Chunk content'))
+    content = models.TextField(_('content'), blank=True, help_text=_('Chunk content'))
     translations = models.ManyToManyField('ChunkTranslation', blank=True, verbose_name=_('translations'))
     translation_set = 'chunktranslation_set'
     translated_fields = ['content']
@@ -29,7 +29,7 @@ class ChunkTranslation(models.Model):
         unique_together = (('chunk_instance', 'language'),)
 
     def __unicode__(self):
-        return u'%s%s' % (self.language,self.name)
+        return u'%s' % (self.language)
 
 
 class FrontPage(MothertongueModelTranslate):

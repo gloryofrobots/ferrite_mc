@@ -52,14 +52,12 @@ class ChunkTranslationInline(admin.StackedInline):
             'fields': ['content']
         }),
     )
-    formfield_overrides = {
-        models.TextField: {'widget': TinyMCE},
-    }
+
 
 
 # create the admin model
 class ChunkAdmin(admin.ModelAdmin):
-    fields = ['content']
+    fields = ['name','content']
     inlines = (ChunkTranslationInline,)
 
 # register with CMS

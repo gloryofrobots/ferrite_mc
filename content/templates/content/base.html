@@ -45,7 +45,7 @@
                 {% for item in mothertongue_language_nav %}
                     {% if item.code == LANGUAGE_CODE %}
                         <li class="lang lang-{{ item.code }}{% if item.last %} last{% endif %}">
-                            <span class="lang_link_active" ">{{ item.name }}</span>
+                            <span class="lang_link_active">{{ item.name }}</span>
                         </li>
                     {% else %}
                         <li class="lang lang-{{ item.code }}{% if item.last %} last{% endif %}">
@@ -60,7 +60,7 @@
 
 
         <div id="page_heading">
-            <h1><a class="main_page_header_link" href="{% url 'main' %}"> {% trans "Ferrite microstrip components" %}</a> </h1>
+            <h1><a class="main_page_header_link" href="{% url 'main' %}"> {% trans "Ferrite microwave microstrip components" %}</a> </h1>
         </div>
 
 

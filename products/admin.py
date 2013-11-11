@@ -48,10 +48,10 @@ class ProductAdmin(admin.ModelAdmin):
     fields = ['series', 'type', 'name', 'description',
               'frequency_min', 'frequency_max', 'insertion_losses_min', 'insertion_losses_max',
               'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max',
-              'input_power', 'soldering_temperature', 'peak_temperature', 'permittivity', 'wave_resistance', 'price']
-
-    list_display = ( 'name', 'series', 'type', 'frequency_min', 'frequency_max')
-    list_filter = ( 'name', 'series', 'type', 'frequency_min', 'frequency_max')
+              'input_power', 'reflected_power','soldering_temperature', 'peak_temperature', 'permittivity', 'wave_resistance', 'price']
+    
+    list_display = ( 'name', 'series', 'type', 'frequency_min', 'frequency_max','price')
+    list_filter = ( 'name', 'series', 'type', 'frequency_min', 'frequency_max','price')
 
 
 class TypeTranslationInline(admin.StackedInline):
@@ -64,13 +64,13 @@ class TypeTranslationInline(admin.StackedInline):
             'fields': ['language', ]
         }),
         ('Translation', {
-            'fields': ['name', 'long_name','magic_attribute'],
+            'fields': ['name', 'long_name','inverse_losses_alias','insertion_losses_alias'],
         }),
     )
 
 
 class TypeAdmin(admin.ModelAdmin):
-    fields = ['name', 'long_name','magic_attribute', 'direct_flow_image', 'reverse_flow_image']
+    fields = ['name', 'long_name','inverse_losses_alias','insertion_losses_alias', 'direct_flow_image', 'reverse_flow_image','technical_conditions_chunk']
     inlines = (TypeTranslationInline,)
 
 
@@ -102,7 +102,7 @@ class SeriesProductInline(admin.StackedInline):
     fields = ['type', 'name', 'description',
               'frequency_min', 'frequency_max', 'insertion_losses_min', 'insertion_losses_max',
               'inverse_losses_min', 'inverse_losses_max', 'vswr', 'temperature_min', 'temperature_max',
-              'input_power', 'soldering_temperature', 'peak_temperature', 'permittivity', 'wave_resistance', 'price']
+              'input_power', 'reflected_power','soldering_temperature', 'peak_temperature', 'permittivity', 'wave_resistance', 'price']
 
 
 class SeriesAdmin(admin.ModelAdmin):

@@ -43,16 +43,18 @@ class Series(models.Model):
 class Type(MothertongueModelTranslate):
     name = models.CharField(max_length=255, help_text=_('Product type name'))
     long_name = models.CharField(max_length=255, help_text=_('Product type long name'))
-    magic_attribute = models.CharField(max_length=255, help_text=_('Product magic attribute name'))
+    insertion_losses_alias = models.CharField(max_length=255, help_text=_('Product insertion losses alias'))
+    inverse_losses_alias = models.CharField(max_length=255, help_text=_('Product invers losses alias'))
     direct_flow_image = FileBrowseField("Image", max_length=200, directory="images/", extensions=[".jpg", ".jpeg", ".png"],
                             blank=True, null=True, help_text=_('Direct flow image'))
     reverse_flow_image = FileBrowseField("Image", max_length=200, directory="images/",
                                         extensions=[".jpg", ".jpeg", ".png"],
                                         blank=True, null=True, help_text=_('Reverse flow image'))
 
+    technical_conditions_chunk = models.CharField(max_length=255, help_text=_('technical_conditions_chunk'))
     translations = models.ManyToManyField('TypeTranslation', blank=True, verbose_name=_('type translations'))
     translation_set = 'typetranslation_set'
-    translated_fields = ['name','long_name','magic_attribute']
+    translated_fields = ['name','long_name','insertion_losses_alias','inverse_losses_alias']
 
     def __unicode__(self):
         return u'%s' % (self.name)
@@ -62,7 +64,8 @@ class TypeTranslation(models.Model):
     type_instance = models.ForeignKey('Type', verbose_name=_('type_instance'))
     language = models.CharField(max_length=5, choices=settings.LANGUAGES[1:], default=settings.LANGUAGES[0][0])
     name = models.CharField(max_length=255, help_text=_('Product type name'))
-    magic_attribute = models.CharField(max_length=255, help_text=_('Product magic attribute name'))
+    insertion_losses_alias = models.CharField(max_length=255, help_text=_('Product insertion losses alias'))
+    inverse_losses_alias = models.CharField(max_length=255, help_text=_('Product inverse losses alias'))
     long_name = models.CharField(max_length=255, help_text=_('Product type long name'))
 
     class Meta(object):
@@ -88,11 +91,11 @@ class Product(MothertongueModelTranslate):
     temperature_max = models.FloatField()
     temperature_min = models.FloatField()
     input_power = models.FloatField()
-    reflected_power = models.FloatField()
-    soldering_temperature = models.FloatField()
-    peak_temperature = models.FloatField()
-    permittivity = models.FloatField()
-    wave_resistance = models.FloatField()
+    reflected_power = models.FloatField(default=2)
+    soldering_temperature = models.FloatField(default=150)
+    peak_temperature = models.FloatField(default=180)
+    permittivity = models.FloatField(default=9.8)
+    wave_resistance = models.FloatField(default=50)
     price = models.FloatField()
 
     translations = models.ManyToManyField('ProductTranslation', blank=True, verbose_name=_('product translations'))
